@@ -1,0 +1,15 @@
+---
+title: "About"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+     - icon: github
+       href: https://github.com/bwbensonjr/bwb-blog
+     - icon: threads
+       href: https://threads.net/bwbensonjr
+     - icon: linkedin
+       href: https://www.linkedin.com/in/bwbenson/
+---
+
+Brent Benson's blog

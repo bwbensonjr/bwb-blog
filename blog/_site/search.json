@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Brent Benson’s blog"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Rename Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Posts",
+    "section": "",
+    "text": "Unlocking Middle Earth\n\n\nA RAG-based tool for exploring The Lord of the Rings\n\n\n\ntechnology\n\n\nai\n\n\nbooks\n\n\n\n\n\n\n\n\n\nJun 19, 2024\n\n\nBrent Benson\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/rename-post-with-code/index.html",
+    "href": "posts/rename-post-with-code/index.html",
+    "title": "A plan and not quite enough time",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "posts/creativity-and-sharing/index.html",
+    "href": "posts/creativity-and-sharing/index.html",
+    "title": "A plan and not quite enough time",
+    "section": "",
+    "text": "I know I’m not alone as a person who has a lot going on in their personal and professional life."
+  },
+  {
+    "objectID": "posts/lord-of-the-rings/index.html",
+    "href": "posts/lord-of-the-rings/index.html",
+    "title": "Unlocking Middle Earth",
+    "section": "",
+    "text": "Readers of J.R.R. Tolkien’s books and watchers of the movie adaptations develop varying levels of understanding of the complex characters, geography, and lore of Middle Earth. Some dive in, head first, poring over the driest sections of The Silmarillion and other related texts and writings, while others enjoy the stories in a more transactional context, understanding only what is needed to follow the story.\nDiscussion with a well-versed Tolkien expert or reading along with others in a book club can be an avenue towards deeper understanding and enjoyment of a piece of literature, but we don’t always have someone around that fits the bill as a discussion partner.\nMy son has recently started delving into The Lord of the Rings again and it gave me the idea of using Generative AI as a tool for enhancing the Tolkien experience."
+  },
+  {
+    "objectID": "posts/lord-of-the-rings/index.html#retrieval-augmented-generation",
+    "href": "posts/lord-of-the-rings/index.html#retrieval-augmented-generation",
+    "title": "Unlocking Middle Earth",
+    "section": "Retrieval-Augmented Generation",
+    "text": "Retrieval-Augmented Generation\nI am a big fan of using Retrieval-Augmented Generation or RAG as a way of using Large Language Models to interact, summarize, and answer questions about a set of texts. In my work in technology and learning at Harvard Business School we have been indexing the textual elements of our active, social, case-based online business courses to create course assistant chatbots and interactive teaching elements.\nThe basic gist of RAG is to divide up the source text into a set of chunks that are then indexed using vector embeddings, creating a numeric vector for each textual chunk that represents (at some level) the semantics of the text. The chunks and associated This database can then be used to find a set of documents related to a query or conversation that can be passed as context to a Large Language Model (LLM) to synthesize an answer.\nThe advantage of using RAG compared to using an LLM like ChatGPT without RAG, is that it focuses the conversation directly on the text, minimizes bias and hallucinations, and also provides the ability to show direct references and links to the textual chunks used to create the LLM response. The current architecture of LLMs does not allow them to provide direct references to source materials."
+  },
+  {
+    "objectID": "posts/lord-of-the-rings/index.html#indexing-the-text-of",
+    "href": "posts/lord-of-the-rings/index.html#indexing-the-text-of",
+    "title": "Unlocking Middle Earth",
+    "section": "Indexing the text of",
+    "text": "Indexing the text of"
+  },
+  {
+    "objectID": "posts/lord-of-the-rings/index.html#indexing-the-text-of-the-lord-of-the-rings",
+    "href": "posts/lord-of-the-rings/index.html#indexing-the-text-of-the-lord-of-the-rings",
+    "title": "Unlocking Middle Earth",
+    "section": "Indexing the text of The Lord of the Rings",
+    "text": "Indexing the text of The Lord of the Rings"
+  }
+]

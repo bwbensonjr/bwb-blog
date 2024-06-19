@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Brent Benson</title>
+<link>https://www.brentwbenson.org/</link>
+<atom:link href="https://www.brentwbenson.org/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.4.554</generator>
+<lastBuildDate>Wed, 19 Jun 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Unlocking Middle Earth</title>
+  <dc:creator>Brent Benson</dc:creator>
+  <link>https://www.brentwbenson.org/posts/lord-of-the-rings/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Readers of J.R.R. Tolkien’s books and watchers of the movie adaptations develop varying levels of understanding of the complex characters, geography, and lore of Middle Earth. Some dive in, head first, poring over the driest sections of <em>The Silmarillion</em> and other related texts and writings, while others enjoy the stories in a more transactional context, understanding only what is needed to follow the story.</p>
+<p>Discussion with a well-versed Tolkien expert or reading along with others in a book club can be an avenue towards deeper understanding and enjoyment of a piece of literature, but we don’t always have someone around that fits the bill as a discussion partner.</p>
+<p>My son has recently started delving into <em>The Lord of the Rings</em> again and it gave me the idea of using Generative AI as a tool for enhancing the Tolkien experience.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.brentwbenson.org/posts/lord-of-the-rings/lotr_q_and_a.png" class="img-fluid figure-img"></p>
+<figcaption>An example of a question and answer from the RAG-based chatbot.</figcaption>
+</figure>
+</div>
+<section id="retrieval-augmented-generation" class="level2">
+<h2 class="anchored" data-anchor-id="retrieval-augmented-generation">Retrieval-Augmented Generation</h2>
+<p>I am a big fan of using Retrieval-Augmented Generation or RAG as a way of using Large Language Models to interact, summarize, and answer questions about a set of texts. In my work in technology and learning at Harvard Business School we have been indexing the textual elements of our active, social, case-based online business courses to create course assistant chatbots and interactive teaching elements.</p>
+<p>The basic gist of RAG is to divide up the source text into a set of chunks that are then indexed using vector embeddings, creating a numeric vector for each textual chunk that represents (at some level) the semantics of the text. The chunks and associated This database can then be used to find a set of documents related to a query or conversation that can be passed as context to a Large Language Model (LLM) to synthesize an answer.</p>
+<p>The advantage of using RAG compared to using an LLM like ChatGPT without RAG, is that it focuses the conversation directly on the text, minimizes bias and hallucinations, and also provides the ability to show direct references and links to the textual chunks used to create the LLM response. The current architecture of LLMs does not allow them to provide direct references to source materials.</p>
+</section>
+<section id="indexing-the-text-of-the-lord-of-the-rings" class="level2">
+<h2 class="anchored" data-anchor-id="indexing-the-text-of-the-lord-of-the-rings">Indexing the text of <em>The Lord of the Rings</em></h2>
+
+
+</section>
+
+ ]]></description>
+  <category>technology</category>
+  <category>ai</category>
+  <category>books</category>
+  <guid>https://www.brentwbenson.org/posts/lord-of-the-rings/</guid>
+  <pubDate>Wed, 19 Jun 2024 04:00:00 GMT</pubDate>
+  <media:content url="https://www.brentwbenson.org/posts/lord-of-the-rings/lotr_q_and_a.png" medium="image" type="image/png" height="111" width="144"/>
+</item>
+</channel>
+</rss>

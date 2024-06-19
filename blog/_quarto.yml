@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: "Brent Benson"
+  site-url: https://www.brentwbenson.org
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/bwbensonjr/bwb-blog
+      - icon: threads
+        href: https://threads.net/bwbensonjr
+      - icon: linkedin
+        href: https://www.linkedin.com/in/bwbenson/
+        
+format:
+  html:
+    theme: litera
+    css: styles.css
+
+
+
