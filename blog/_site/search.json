@@ -7,46 +7,11 @@
     "text": "Brent Benson’s blog"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Rename Post With Code",
-    "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Posts",
-    "section": "",
-    "text": "Unlocking Middle Earth\n\n\nA RAG-based tool for exploring The Lord of the Rings\n\n\n\ntechnology\n\n\nai\n\n\nbooks\n\n\n\n\n\n\n\n\n\nJun 19, 2024\n\n\nBrent Benson\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/rename-post-with-code/index.html",
-    "href": "posts/rename-post-with-code/index.html",
-    "title": "A plan and not quite enough time",
-    "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
-    "objectID": "posts/creativity-and-sharing/index.html",
-    "href": "posts/creativity-and-sharing/index.html",
-    "title": "A plan and not quite enough time",
-    "section": "",
-    "text": "I know I’m not alone as a person who has a lot going on in their personal and professional life."
-  },
-  {
     "objectID": "posts/lord-of-the-rings/index.html",
     "href": "posts/lord-of-the-rings/index.html",
     "title": "Unlocking Middle Earth",
     "section": "",
-    "text": "Readers of J.R.R. Tolkien’s books and watchers of the movie adaptations develop varying levels of understanding of the complex characters, geography, and lore of Middle Earth. Some dive in, head first, poring over the driest sections of The Silmarillion and other related texts and writings, while others enjoy the stories in a more transactional context, understanding only what is needed to follow the story.\nDiscussion with a well-versed Tolkien expert or reading along with others in a book club can be an avenue towards deeper understanding and enjoyment of a piece of literature, but we don’t always have someone around that fits the bill as a discussion partner.\nMy son has recently started delving into The Lord of the Rings again and it gave me the idea of using Generative AI as a tool for enhancing the Tolkien experience."
+    "text": "Readers of J.R.R. Tolkien’s books and watchers of the movie adaptations develop varying levels of understanding of the complex characters, geography, and lore of Middle Earth. Some dive in, head first, poring over the driest sections of The Silmarillion and other related texts and writings, while others enjoy the stories in a more transactional context, understanding only what is needed to follow the story.\nDiscussion with a well-versed Tolkien expert or reading along with others in a book club can be an avenue towards deeper understanding and enjoyment of a piece of literature, but we don’t always have someone around that fits the bill as a discussion partner.\nMy son has recently started delving into The Lord of the Rings again and it gave me the idea of using Generative AI as a tool for enhancing the Tolkien experience.\nThis is an example of a question I asked after indexing the textual content of The Lord of the Rings books and making them available through a custom conversational retrieval chatbot using Retrieval-Augmented Generation."
   },
   {
     "objectID": "posts/lord-of-the-rings/index.html#retrieval-augmented-generation",
@@ -56,17 +21,24 @@
     "text": "Retrieval-Augmented Generation\nI am a big fan of using Retrieval-Augmented Generation or RAG as a way of using Large Language Models to interact, summarize, and answer questions about a set of texts. In my work in technology and learning at Harvard Business School we have been indexing the textual elements of our active, social, case-based online business courses to create course assistant chatbots and interactive teaching elements.\nThe basic gist of RAG is to divide up the source text into a set of chunks that are then indexed using vector embeddings, creating a numeric vector for each textual chunk that represents (at some level) the semantics of the text. The chunks and associated This database can then be used to find a set of documents related to a query or conversation that can be passed as context to a Large Language Model (LLM) to synthesize an answer.\nThe advantage of using RAG compared to using an LLM like ChatGPT without RAG, is that it focuses the conversation directly on the text, minimizes bias and hallucinations, and also provides the ability to show direct references and links to the textual chunks used to create the LLM response. The current architecture of LLMs does not allow them to provide direct references to source materials."
   },
   {
-    "objectID": "posts/lord-of-the-rings/index.html#indexing-the-text-of",
-    "href": "posts/lord-of-the-rings/index.html#indexing-the-text-of",
-    "title": "Unlocking Middle Earth",
-    "section": "Indexing the text of",
-    "text": "Indexing the text of"
-  },
-  {
     "objectID": "posts/lord-of-the-rings/index.html#indexing-the-text-of-the-lord-of-the-rings",
     "href": "posts/lord-of-the-rings/index.html#indexing-the-text-of-the-lord-of-the-rings",
     "title": "Unlocking Middle Earth",
     "section": "Indexing the text of The Lord of the Rings",
-    "text": "Indexing the text of The Lord of the Rings"
+    "text": "Indexing the text of The Lord of the Rings\nI used an ePub version of The Lord of the Rings that included all three volumes and 6 books along with appendices. The custom chunking cusprogram (see Appendix) produces a JSONL file with each line containing a chunk of text and associated metadata like this:\n{'class': 'appendix',\n 'id': 'appe-1',\n 'index': 991,\n 'label': 'APPENDIX A: ANNALS OF THE KINGS AND RULERS',\n 'page': 'page1071',\n 'playorder': '79',\n 'source': 'LordoftheRings_appe-1.html',\n 'text': '.\\n'\n         'After the fall of Sauron, Gimli brought south a part of the '\n         'Dwarf-folk of Erebor, and he became Lord of the Glittering Caves.\\r\\n'\n         '         He and his people did great works in Gondor and Rohan. For '\n         'Minas Tirith they forged gates of mithril and steel to replace those '\n         'broken by the Witch-king. Legolas his friend also brought south '\n         'Elves out of Greenwood, and they\\r\\n'\n         '         dwelt in Ithilien, and it became once again the fairest '\n         'country in all the westlands.\\n'\n         'But when King Elessar gave up his life Legolas followed at last the '\n         'desire of his heart and sailed over Sea.',\n 'title': 'The Lord of the Rings'}"
+  },
+  {
+    "objectID": "posts/lord-of-the-rings/index.html#sec-chunking",
+    "href": "posts/lord-of-the-rings/index.html#sec-chunking",
+    "title": "Unlocking Middle Earth",
+    "section": "Appendix: Custom chunking program",
+    "text": "Appendix: Custom chunking program\n\nimport jsonlines\nfrom itertools import groupby\nfrom operator import itemgetter\nfrom ebooklib import epub, ITEM_DOCUMENT, ITEM_NAVIGATION\nfrom bs4 import BeautifulSoup\nfrom langchain_text_splitters import RecursiveCharacterTextSplitter\n\nMAX_CHUNK_CHARS = 4000\n\ndef main():\n    epub_file = \"The_Lord_of_the_Rings.epub\"\n    jsonl_file = \"The_Lord_of_the_Rings.jsonl\"\n    print(f\"Process {epub_file}...\")\n    chunks = epub_text(epub_file)\n    print(f\"Identified {len(chunks)} textual elements.\")\n    for ix, chunk in enumerate(chunks):\n        chunk[\"index\"] = ix\n        chunk[\"title\"] = \"The Lord of the Rings\"\n        vol_book = path_to_volume_book(chunk[\"path\"])\n        if vol_book:\n            chunk.update(vol_book)\n        del chunk[\"path\"]\n    print(f\"Writing {jsonl_file}...\")\n    with jsonlines.open(jsonl_file, \"w\") as out_file:\n        out_file.write_all(chunks)\n    print(\"Done.\")\n\ndef epub_text(epub_file):\n    book = epub.read_epub(epub_file)\n    toc = table_of_contents(book)\n    contents = []\n    for source in toc:\n        node = toc[source]\n        item = book.get_item_with_href(source)\n        chunks = chapter_contents(item, node)\n        page_chunks = coalesce_pages(chunks)\n        contents.extend(page_chunks)\n    return contents\n\ndef table_of_contents(book):\n    nav_items = book.get_items_of_type(ITEM_NAVIGATION)\n    nav_item = next(nav_items)\n    ncx = BeautifulSoup(nav_item.get_content(), \"html.parser\")\n    np_nodes = []\n    for np in ncx.find(\"navmap\").find_all(\"navpoint\", recursive=False):\n        nodes = process_navpoint(np)\n        np_nodes.extend(nodes)\n    toc = {}\n    for node in np_nodes:\n        toc[node[\"source\"]] = node\n    return toc\n\ndef process_navpoint(navpoint, path=[]):\n    node = {\n        \"source\": navpoint.content[\"src\"],\n        \"label\": navpoint.find(\"navlabel\").get_text().strip(),\n        \"path\": path,\n    }\n    node.update(attr_values(navpoint.attrs))\n    child_path = path + [node[\"label\"]]\n    nodes = [node]\n    for child_np in navpoint.find_all(\"navpoint\", recursive=False):\n        child_nodes = process_navpoint(child_np, child_path)\n        nodes.extend(child_nodes)\n    return nodes\n\ndef attr_values(attrs):\n    \"Book-specific interpretation of TOC attributes\"\n    vals = {\n        \"class\": attrs[\"class\"][0],\n        \"id\": attrs[\"id\"],\n        \"playorder\": attrs[\"playorder\"],\n    }\n    return vals\n\ndef chapter_contents(item, node):\n    chapter_chunks = []\n    soup = BeautifulSoup(item.get_body_content(), \"html.parser\")\n    # Iterate over every tag\n    page = \"-\"\n    if soup.div:\n        root_tag = soup.div\n    else:\n        root_tag = soup\n    for tag in root_tag.find_all(True, recursive=False):\n        if ((tag.name == \"a\") and\n            (\"id\" in tag.attrs) and\n            tag[\"id\"].startswith(\"page\")):\n            page = tag[\"id\"]\n        else:\n            chunk = {\n                \"text\": tag.get_text().strip(),\n                \"page\": page,\n            }\n            chunk.update(node)\n            chapter_chunks.append(chunk)\n    return chapter_chunks\n\ndef coalesce_pages(chunks):\n    \"\"\"Combine the texts of items that share the same page.\"\"\"\n    keys = [\"page\"]\n    key_func = itemgetter(*keys)\n    text_splitter = RecursiveCharacterTextSplitter(\n        chunk_size = MAX_CHUNK_CHARS,\n        chunk_overlap = 0,\n        separators = [\".\\n\", \"\\n\\n\", \"\\r\\n\", \"\\n\"], \n    )\n    page_chunks = []\n    for page_key, page_iter in groupby(chunks, key_func):\n        chunk_nodes = [pi for pi in page_iter]\n        page_chunk_proto = chunk_nodes[0]\n        page_text = \"\\n\".join(pi[\"text\"] for pi in chunk_nodes)\n        page_texts = text_splitter.split_text(page_text)\n        for text in page_texts:\n            if text:\n                page_chunk = page_chunk_proto.copy()\n                page_chunk[\"text\"] = text\n                page_chunks.append(page_chunk)\n    return page_chunks\n    \ndef path_to_volume_book(path):\n    match path:\n        case []:\n            vol_book = None\n        case [volume]:\n            vol_book = {\"volume\": volume.title()}\n        case [volume, book]:\n            vol_book = {\n                \"volume\": volume.title(),\n                \"book\": book.title(),\n            }\n    return vol_book\n\nif __name__ == \"__main__\":\n    main()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Posts",
+    "section": "",
+    "text": "Unlocking Middle Earth\n\n\nA RAG-based tool for exploring The Lord of the Rings\n\n\n\ntechnology\n\n\nai\n\n\nbooks\n\n\n\n\n\n\n\n\n\nJun 19, 2024\n\n\nBrent Benson\n\n\n\n\n\n\nNo matching items"
   }
 ]
