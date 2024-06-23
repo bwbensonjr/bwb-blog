@@ -1,9 +1,10 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Brent Benson"
-  site-url: https://www.brentwbenson.org
+  site-url: https://brentwbenson.org
   navbar:
     right:
       - about.qmd
