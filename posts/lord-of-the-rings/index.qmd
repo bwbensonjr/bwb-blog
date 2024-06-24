@@ -88,6 +88,16 @@ line containing a chunk of text and associated metadata like this:
  'title': 'The Lord of the Rings'}
 ```
 
+## Other things to try
+
+- It would definitely make sense to add *The Hobbit* and *The
+Silmarillion* to the system to allow for a broader range of questions.
+- The use of a multi-modal embedding model would allow for indexing
+the maps of books as images, which might add interesting capabilities.
+- It would be useful to be able to do broader RAG searches to the end
+of creating different types of summarizations across topics, characters,
+or family lines.
+
 ## Appendix: Custom chunking program {#sec-chunking}
 
 ```{python}

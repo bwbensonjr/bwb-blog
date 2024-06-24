@@ -40,5 +40,12 @@
     "title": "Posts",
     "section": "",
     "text": "Unlocking Middle Earth\n\n\nA RAG-based tool for exploring The Lord of the Rings\n\n\n\ntechnology\n\n\nai\n\n\nbooks\n\n\n\n\n\n\n\n\n\nJun 19, 2024\n\n\nBrent Benson\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/lord-of-the-rings/index.html#other-things-to-try",
+    "href": "posts/lord-of-the-rings/index.html#other-things-to-try",
+    "title": "Unlocking Middle Earth",
+    "section": "Other things to try",
+    "text": "Other things to try\n\nIt would definitely make sense to add The Hobbit and The Silmarillion to the system to allow for a broader range of questions.\nThe use of a multi-modal embedding model would allow for indexing the maps of books as images, which might add interesting capabilities.\nIt would be useful to be able to do broader RAG searches to the end of creating different types of summarizations across topics, characters, or family lines."
   }
 ]

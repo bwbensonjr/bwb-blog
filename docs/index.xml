@@ -60,9 +60,17 @@
          'desire of his heart and sailed over Sea.',
  'title': 'The Lord of the Rings'}</code></pre>
 </section>
+<section id="other-things-to-try" class="level2">
+<h2 class="anchored" data-anchor-id="other-things-to-try">Other things to try</h2>
+<ul>
+<li>It would definitely make sense to add <em>The Hobbit</em> and <em>The Silmarillion</em> to the system to allow for a broader range of questions.</li>
+<li>The use of a multi-modal embedding model would allow for indexing the maps of books as images, which might add interesting capabilities.</li>
+<li>It would be useful to be able to do broader RAG searches to the end of creating different types of summarizations across topics, characters, or family lines.</li>
+</ul>
+</section>
 <section id="sec-chunking" class="level2">
 <h2 class="anchored" data-anchor-id="sec-chunking">Appendix: Custom chunking program</h2>
-<div id="a56d8024" class="cell" data-execution_count="1">
+<div id="1312a972" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> jsonlines</span>
