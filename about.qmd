@@ -12,4 +12,7 @@ about:
        href: https://www.linkedin.com/in/bwbenson/
 ---
 
-Brent Benson's blog
+This is a collection of articles and writings on a variety of topics
+including technology, Artificial Intelligence, music, and books. I'd
+love to hear your constructive comments or feedback on one of the
+social media channels.
