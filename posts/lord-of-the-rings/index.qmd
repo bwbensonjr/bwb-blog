@@ -2,12 +2,26 @@
 title: "Unlocking Middle Earth"
 subtitle: "A RAG-based tool for exploring *The Lord of the Rings*"
 author: "Brent Benson"
-date: "2024-06-19"
+date: "2024-07-04"
 categories: [technology, ai, books]
 image: "lotr_q_and_a.png"
 execute:
   eval: false
 ---
+
+New generative AI technologies can be useful for delving into
+detailed, world-building stories like Tolkien's *The Lord of the
+Rings*.
+
+First, a few examples of some questions and responses.
+
+![First example of a question and answer from the RAG-based chatbot. "Who is Aragorn?"](lotr_q_and_a.png)
+
+![Second example of a question and answer from the RAG-based chatbot. "How did Aragorn come to know Elrond?"](lotr_q_and_a_2.png)
+
+![Third example of a question and answer from the RAG-based chatbot. "What are the Silmarils?"](lotr_q_and_a_3.png)
+
+## Motivation
 
 Readers of J.R.R. Tolkien's books and watchers of the movie
 adaptations develop varying levels of understanding of the complex
@@ -27,7 +41,6 @@ My son has recently started delving into *The Lord of the Rings* again
 and it gave me the idea of using Generative AI as a tool for enhancing
 the Tolkien experience.
 
-![An example of a question and answer from the RAG-based chatbot.](lotr_q_and_a.png)
 
 This is an example of a question I asked after indexing the textual
 content of *The Lord of the Rings* books and making them available
@@ -58,6 +71,8 @@ show direct references and links to the textual chunks used to create
 the LLM response. The current architecture of LLMs does not allow them
 to provide direct references to source materials.
 
+![An illustration of the data flow in the converational-retrieval chain.](conversational_retrieval_chain.png)
+
 ## Indexing the text of *The Lord of the Rings*
 
 I used an ePub version of *The Lord of the Rings* that included all
@@ -67,34 +82,36 @@ class="quarto-xref">Appendix</a>) produces a `JSONL` file with each
 line containing a chunk of text and associated metadata like this:
 
 ```{json}
-{'class': 'appendix',
- 'id': 'appe-1',
- 'index': 991,
- 'label': 'APPENDIX A: ANNALS OF THE KINGS AND RULERS',
- 'page': 'page1071',
- 'playorder': '79',
- 'source': 'LordoftheRings_appe-1.html',
- 'text': '.\n'
-         'After the fall of Sauron, Gimli brought south a part of the '
-         'Dwarf-folk of Erebor, and he became Lord of the Glittering Caves.\r\n'
-         '         He and his people did great works in Gondor and Rohan. For '
-         'Minas Tirith they forged gates of mithril and steel to replace those '
-         'broken by the Witch-king. Legolas his friend also brought south '
-         'Elves out of Greenwood, and they\r\n'
-         '         dwelt in Ithilien, and it became once again the fairest '
-         'country in all the westlands.\n'
-         'But when King Elessar gave up his life Legolas followed at last the '
-         'desire of his heart and sailed over Sea.',
- 'title': 'The Lord of the Rings'}
+{"class": "appendix",
+ "id": "appe-1",
+ "index": 991,
+ "label": "APPENDIX A: ANNALS OF THE KINGS AND RULERS",
+ "page": "page1071",
+ "playorder": "79",
+ "source": "LordoftheRings_appe-1.html",
+ "text": ".\n"
+         "After the fall of Sauron, Gimli brought south a part of the "
+         "Dwarf-folk of Erebor, and he became Lord of the Glittering Caves.\r\n"
+         "         He and his people did great works in Gondor and Rohan. For "
+         "Minas Tirith they forged gates of mithril and steel to replace those "
+         "broken by the Witch-king. Legolas his friend also brought south "
+         "Elves out of Greenwood, and they\r\n"
+         "         dwelt in Ithilien, and it became once again the fairest "
+         "country in all the westlands.\n"
+         "But when King Elessar gave up his life Legolas followed at last the "
+         "desire of his heart and sailed over Sea.",
+ "title": "The Lord of the Rings"}
 ```
 
 ## Other things to try
 
-- It would definitely make sense to add *The Hobbit* and *The
+* It would definitely make sense to add *The Hobbit* and *The
 Silmarillion* to the system to allow for a broader range of questions.
-- The use of a multi-modal embedding model would allow for indexing
+
+* The use of a multi-modal embedding model would allow for indexing
 the maps of books as images, which might add interesting capabilities.
-- It would be useful to be able to do broader RAG searches to the end
+
+* It would be useful to be able to do broader RAG searches to the end
 of creating different types of summarizations across topics, characters,
 or family lines.
 

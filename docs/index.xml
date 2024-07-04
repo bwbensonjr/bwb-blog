@@ -9,8 +9,8 @@
 <link>https://brentwbenson.org/</link>
 <atom:link href="https://brentwbenson.org/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.4.554</generator>
-<lastBuildDate>Wed, 19 Jun 2024 04:00:00 GMT</lastBuildDate>
+<generator>quarto-1.4.555</generator>
+<lastBuildDate>Thu, 04 Jul 2024 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Unlocking Middle Earth</title>
   <dc:creator>Brent Benson</dc:creator>
@@ -21,56 +21,79 @@
 
 
 
-<p>Readers of J.R.R. Tolkien’s books and watchers of the movie adaptations develop varying levels of understanding of the complex characters, geography, and lore of Middle Earth. Some dive in, head first, poring over the driest sections of <em>The Silmarillion</em> and other related texts and writings, while others enjoy the stories in a more transactional context, understanding only what is needed to follow the story.</p>
-<p>For those looking for a more in-depth experience a discussion with a well-versed Tolkien expert or reading along with others in a book club can be an avenue towards deeper understanding and enjoyment. But we don’t always have someone around that fits the bill as a discussion partner.</p>
-<p>My son has recently started delving into <em>The Lord of the Rings</em> again and it gave me the idea of using Generative AI as a tool for enhancing the Tolkien experience.</p>
+<p>New generative AI technologies can be useful for delving into detailed, world-building stories like Tolkien’s <em>The Lord of the Rings</em>.</p>
+<p>First, a few examples of some questions and responses.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://brentwbenson.org/posts/lord-of-the-rings/lotr_q_and_a.png" class="img-fluid figure-img"></p>
-<figcaption>An example of a question and answer from the RAG-based chatbot.</figcaption>
+<figcaption>First example of a question and answer from the RAG-based chatbot. “Who is Aragorn?”</figcaption>
 </figure>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://brentwbenson.org/posts/lord-of-the-rings/lotr_q_and_a_2.png" class="img-fluid figure-img"></p>
+<figcaption>Second example of a question and answer from the RAG-based chatbot. “How did Aragorn come to know Elrond?”</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://brentwbenson.org/posts/lord-of-the-rings/lotr_q_and_a_3.png" class="img-fluid figure-img"></p>
+<figcaption>Third example of a question and answer from the RAG-based chatbot. “What are the Silmarils?”</figcaption>
+</figure>
+</div>
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>Readers of J.R.R. Tolkien’s books and watchers of the movie adaptations develop varying levels of understanding of the complex characters, geography, and lore of Middle Earth. Some dive in, head first, poring over the driest sections of <em>The Silmarillion</em> and other related texts and writings, while others enjoy the stories in a more transactional context, understanding only what is needed to follow the story.</p>
+<p>For those looking for a more in-depth experience a discussion with a well-versed Tolkien expert or reading along with others in a book club can be an avenue towards deeper understanding and enjoyment. But we don’t always have someone around that fits the bill as a discussion partner.</p>
+<p>My son has recently started delving into <em>The Lord of the Rings</em> again and it gave me the idea of using Generative AI as a tool for enhancing the Tolkien experience.</p>
 <p>This is an example of a question I asked after indexing the textual content of <em>The Lord of the Rings</em> books and making them available through a custom conversational retrieval chatbot using Retrieval-Augmented Generation.</p>
+</section>
 <section id="retrieval-augmented-generation" class="level2">
 <h2 class="anchored" data-anchor-id="retrieval-augmented-generation">Retrieval-Augmented Generation</h2>
 <p>I am a big fan of using Retrieval-Augmented Generation or RAG as a way of using Large Language Models to interact, summarize, and answer questions about a set of texts. In my work in technology and learning at Harvard Business School we have been indexing the textual elements of our active, social, case-based online business courses to create course assistant chatbots and interactive teaching elements.</p>
 <p>The basic gist of RAG is to divide up the source text into a set of chunks that are then indexed using vector embeddings, creating a numeric vector for each textual chunk that represents (at some level) the semantics of the text. The chunks and associated This database can then be used to find a set of documents related to a query or conversation that can be passed as context to a Large Language Model (LLM) to synthesize an answer.</p>
 <p>The advantage of using RAG compared to using an LLM like ChatGPT without RAG, is that it focuses the conversation directly on the text, minimizes bias and hallucinations, and also provides the ability to show direct references and links to the textual chunks used to create the LLM response. The current architecture of LLMs does not allow them to provide direct references to source materials.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://brentwbenson.org/posts/lord-of-the-rings/conversational_retrieval_chain.png" class="img-fluid figure-img"></p>
+<figcaption>An illustration of the data flow in the converational-retrieval chain.</figcaption>
+</figure>
+</div>
 </section>
 <section id="indexing-the-text-of-the-lord-of-the-rings" class="level2">
 <h2 class="anchored" data-anchor-id="indexing-the-text-of-the-lord-of-the-rings">Indexing the text of <em>The Lord of the Rings</em></h2>
 <p>I used an ePub version of <em>The Lord of the Rings</em> that included all three volumes and 6 books along with appendices. The custom chunking cusprogram (see Appendix) produces a <code>JSONL</code> file with each line containing a chunk of text and associated metadata like this:</p>
-<pre class="{json}"><code>{'class': 'appendix',
- 'id': 'appe-1',
- 'index': 991,
- 'label': 'APPENDIX A: ANNALS OF THE KINGS AND RULERS',
- 'page': 'page1071',
- 'playorder': '79',
- 'source': 'LordoftheRings_appe-1.html',
- 'text': '.\n'
-         'After the fall of Sauron, Gimli brought south a part of the '
-         'Dwarf-folk of Erebor, and he became Lord of the Glittering Caves.\r\n'
-         '         He and his people did great works in Gondor and Rohan. For '
-         'Minas Tirith they forged gates of mithril and steel to replace those '
-         'broken by the Witch-king. Legolas his friend also brought south '
-         'Elves out of Greenwood, and they\r\n'
-         '         dwelt in Ithilien, and it became once again the fairest '
-         'country in all the westlands.\n'
-         'But when King Elessar gave up his life Legolas followed at last the '
-         'desire of his heart and sailed over Sea.',
- 'title': 'The Lord of the Rings'}</code></pre>
+<pre class="{json}"><code>{"class": "appendix",
+ "id": "appe-1",
+ "index": 991,
+ "label": "APPENDIX A: ANNALS OF THE KINGS AND RULERS",
+ "page": "page1071",
+ "playorder": "79",
+ "source": "LordoftheRings_appe-1.html",
+ "text": ".\n"
+         "After the fall of Sauron, Gimli brought south a part of the "
+         "Dwarf-folk of Erebor, and he became Lord of the Glittering Caves.\r\n"
+         "         He and his people did great works in Gondor and Rohan. For "
+         "Minas Tirith they forged gates of mithril and steel to replace those "
+         "broken by the Witch-king. Legolas his friend also brought south "
+         "Elves out of Greenwood, and they\r\n"
+         "         dwelt in Ithilien, and it became once again the fairest "
+         "country in all the westlands.\n"
+         "But when King Elessar gave up his life Legolas followed at last the "
+         "desire of his heart and sailed over Sea.",
+ "title": "The Lord of the Rings"}</code></pre>
 </section>
 <section id="other-things-to-try" class="level2">
 <h2 class="anchored" data-anchor-id="other-things-to-try">Other things to try</h2>
 <ul>
-<li>It would definitely make sense to add <em>The Hobbit</em> and <em>The Silmarillion</em> to the system to allow for a broader range of questions.</li>
-<li>The use of a multi-modal embedding model would allow for indexing the maps of books as images, which might add interesting capabilities.</li>
-<li>It would be useful to be able to do broader RAG searches to the end of creating different types of summarizations across topics, characters, or family lines.</li>
+<li><p>It would definitely make sense to add <em>The Hobbit</em> and <em>The Silmarillion</em> to the system to allow for a broader range of questions.</p></li>
+<li><p>The use of a multi-modal embedding model would allow for indexing the maps of books as images, which might add interesting capabilities.</p></li>
+<li><p>It would be useful to be able to do broader RAG searches to the end of creating different types of summarizations across topics, characters, or family lines.</p></li>
 </ul>
 </section>
 <section id="sec-chunking" class="level2">
 <h2 class="anchored" data-anchor-id="sec-chunking">Appendix: Custom chunking program</h2>
-<div id="1312a972" class="cell" data-execution_count="1">
+<div id="bf0f994c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> jsonlines</span>
@@ -630,8 +653,8 @@ font-style: inherit;">"__main__"</span>:</span>
   <category>ai</category>
   <category>books</category>
   <guid>https://brentwbenson.org/posts/lord-of-the-rings/</guid>
-  <pubDate>Wed, 19 Jun 2024 04:00:00 GMT</pubDate>
-  <media:content url="https://brentwbenson.org/posts/lord-of-the-rings/lotr_q_and_a.png" medium="image" type="image/png" height="111" width="144"/>
+  <pubDate>Thu, 04 Jul 2024 04:00:00 GMT</pubDate>
+  <media:content url="https://brentwbenson.org/posts/lord-of-the-rings/lotr_q_and_a.png" medium="image" type="image/png" height="159" width="144"/>
 </item>
 </channel>
 </rss>
