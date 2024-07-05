@@ -5,6 +5,7 @@ project:
 website:
   title: "Brent Benson"
   site-url: https://brentwbenson.org
+  google-analytics: "G-VGEHLT4S8G"
   navbar:
     right:
       - about.qmd
