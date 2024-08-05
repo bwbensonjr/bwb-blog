@@ -1,0 +1,307 @@
+---
+title: Massachusetts 2024 Election Overview
+subtitle: "A detailed overview of primary and general races"
+author: "Brent Benson"
+date: "2024-08-04"
+categories: [elections, politics, mapoli]
+execute:
+  echo: false
+format:
+  html:
+    html-table-processing: none
+---
+
+```{r}
+#| output: false
+
+library(tidyverse)
+library(readxl)
+library(glue)
+library(gt)
+
+# Color of group-row
+group_color <- "lightgrey"
+
+# Leave out registrars and clerks
+offices_to_cover <- c(
+    "Governor's Council",
+    "State Representative",
+    "State Senate",
+    "Representative in Congress",
+    "Senator in Congress"
+)      
+
+candidates <- read_excel("2024 Candidates 6.4.24.xlsx") %>%
+    # Column transformations
+    mutate(is_incumbent = (`Incumbent Y/N` == "Y"),
+           district = str_replace(District, " & ", " and "),
+           candidate = str_to_title(`Candidate`),
+                      street_address = str_split_i(Address, ", ", 1),
+           city_town = str_split_i(Address, ", ", 2),
+           display_name = str_glue("{candidate} ({Party}-{city_town})")) %>%
+    # Renaming and selection of columns to keep
+    select(office = Office,
+           district,
+           district_id = `District ID`,
+           candidate,
+           display_name,
+           is_incumbent,
+           party = Party,
+           street_address,
+           city_town,
+           statement = `Statement of Public Office/Political Designation`)
+
+office_list <- unique(candidates$office)
+
+calculated_incumbents <- read_csv("ma_incumbents_2024_08_03.csv") %>%
+    mutate(district = str_replace(district, " & ", " and "),
+           incumbent_party = str_sub(party_incumbent, 1, 1),
+           incumbent_display = str_glue("{name_incumbent} ({incumbent_party}-{city_town_incumbent})")) %>%
+    select(office,
+           district,
+           incumbent = name_incumbent,
+           incumbent_display,
+           incumbent_party,
+           incumbent_city_town = city_town_incumbent)
+
+running_incumbents <- candidates %>%
+    filter(is_incumbent) %>%
+    select(office,
+           district,
+           incumbent=candidate,
+           incumbent_display=display_name,
+           incumbent_party=party,
+           incumbent_city_town=city_town)
+
+# Give the set of candidates for a particular district,
+# return a dataframe with a column per party with the
+# count of the candidates in that party.
+party_counts <- function(candidates) {
+    candidates %>%
+        group_by(party) %>%
+        tally() %>%
+        pivot_wider(names_from=party, values_from=n)
+}
+
+district_summaries <- read_excel("notable_districts_2024.xlsx") %>%
+    filter(!is.na(summary)) %>%
+    select(district_id, summary)
+
+districts <- candidates %>%
+    # Transform into row-per seat
+    nest(candidate = c(candidate,
+                       display_name,
+                       is_incumbent,
+                       party,
+                       street_address,
+                       city_town,
+                       statement)) %>%
+    # Join to incumbency data
+    left_join(running_incumbents, by=c("office", "district")) %>%
+    # District-level data
+    mutate(num_candidates = map_int(candidate, nrow),
+           is_contested = (num_candidates > 1),
+           is_open = is.na(incumbent),
+           parties = map(candidate, party_counts)) %>%
+    unnest(parties) %>%
+    # This only handles D, R, and U for `party`
+    replace_na(list(D=0, R=0, U=0)) %>%
+    mutate(inc_party_count = case_when(
+        incumbent_party == "D" ~ D,
+        incumbent_party == "R" ~ R,
+        incumbent_party == "U" ~ U,
+        TRUE ~ NA_real_)) %>%
+    mutate(incumbent_primary = (inc_party_count > 1),
+           contested_no_primary = (is_contested & !incumbent_primary)) %>%
+    left_join(district_summaries, by="district_id") %>%
+    rows_patch(calculated_incumbents,
+               by=c("office", "district"),
+               unmatched="ignore") %>%
+    filter(office %in% offices_to_cover)
+
+## notable_districts <- districts %>%
+##     filter(office %in% offices_to_cover,
+##           (incumbent_primary | is_open | contested_no_primary)) %>%
+##     mutate(candidate_names = map_chr(candidate,
+##                                      ~paste(.x$display_name, collapse = ", ")))
+##
+## notable_districts %>% write_csv("notable_districts_2024.csv")
+
+office_table_display <- function(df, office_group) {
+    df %>%
+        filter(office == office_group) %>%
+        select(-office) %>%
+        gt(groupname_col="row_group", process_md=TRUE) %>%
+        tab_options(
+            column_labels.hidden=TRUE,
+            row_group.background.color = group_color) %>%
+        sub_missing(missing_text="") %>%
+        cols_align(columns="display_name", align="right") %>%
+        opt_row_striping(row_striping=FALSE)
+}
+```
+
+This overview covers U.S. Senate, U.S. Congress, State Senate, State
+Represenative, and Governor's Council races. It divides the races into
+incumbents with contested primaries, open seats where the current seat
+holder is not pursuing their seat in 2024, and then races with
+non-primary competition for the incumbent.
+
+
+## Primary challenges
+
+```{r}
+incumbent_primaries <- districts %>%
+    filter(office %in% offices_to_cover,
+           incumbent_primary)
+
+incumbent_primary_view <- incumbent_primaries %>%
+    select(office, district, district_id, summary, incumbent_party, candidate) %>%
+    unnest(candidate) %>%
+    select(office,
+           district,
+           district_id,
+           summary,
+           display_name,
+           statement,
+           is_incumbent,
+           incumbent_party,
+           party) %>%
+    filter(incumbent_party == party) %>%
+    mutate(row_group = str_glue("**{office} - {district}**<br/>*{summary}*")) %>%
+    arrange(district_id, desc(is_incumbent)) %>%
+    select(office, row_group, display_name, statement)
+
+num_primary_challenges <- nrow(incumbent_primaries)
+```
+
+### Governor's Council incumbent primaries
+
+```{r}
+office_table_display(incumbent_primary_view, "Governor's Council")
+```
+
+### State Senate incumbent primaries
+
+```{r}
+office_table_display(incumbent_primary_view, "State Senate")
+```
+
+### State Representative incumbent primaries
+
+```{r}
+office_table_display(incumbent_primary_view, "State Representative")
+```
+
+## Open Seats
+
+```{r}
+open_seats <- districts %>%
+    filter(is_open)
+
+## incumbents_not_running <- open_seats %>%
+##     select(district,
+##            office,
+##            incumbent_display)
+
+open_seats_view <- open_seats %>%
+    select(office, district, summary, incumbent_display, candidate) %>%
+    unnest(candidate) %>%
+    select(office, district, summary, display_name, statement, party, incumbent_display) %>%
+    group_by(office, district) %>%
+    arrange(party) %>%
+    select(-party) %>%
+    ungroup() %>%
+    mutate(row_group = str_glue("**{office} - {district}**<br/>*Incumbent {incumbent_display} {summary}*")) %>%
+    select(-c(district, summary, incumbent_display))
+```
+
+There are `{r} nrow(open_seats)` seats where the sitting incumbent is
+not running. There is a section in the header listing the incumbent
+with other details. At least eight of the incumbents are running for a
+different office or have been appointed to another governmental role.
+
+### Open Governor's Council
+
+```{r}
+office_table_display(open_seats_view, "Governor's Council")
+```
+
+### Open State Senate
+
+```{r}
+office_table_display(open_seats_view, "State Senate")
+```
+
+### Open State Representative
+
+```{r}
+office_table_display(open_seats_view, "State Representative")
+```
+
+## Contested
+
+```{r}
+contested <- districts %>%
+    filter(is_contested,
+           inc_party_count == 1)
+
+contested_view <- contested %>%
+    select(office, district, candidate) %>%
+    unnest(candidate) %>%
+    select(office, district, display_name, statement, is_incumbent, party) %>%
+    group_by(office, district) %>%
+    arrange(desc(is_incumbent), party) %>%
+    ungroup() %>%
+    mutate(row_group = str_glue("**{office} - {district}**")) %>%
+    select(-c(district, is_incumbent, party))
+
+num_gc_contested <- nrow(filter(contested, office == "Governor's Council"))
+num_state_sen_contested <- nrow(filter(contested, office == "State Senate"))
+num_state_rep_contested <- nrow(filter(contested, office == "State Representative"))
+```
+
+There are `{r} nrow(contested)` seat where the incumbent does not have
+a primary challenges, but faces one or more candidates who are
+unenrolled or from a different party. Senator Elizabeth Warren will
+face off against the winner of a three-way Republican primary. There
+are also three Republicans vying to replace U.S. Representative
+Stephen Lynch, while U.S. Representative Bill Keating will face
+Republican Dan Sullivan who lost the 2022 GOP primary to Jesse Brown.
+
+There are `{r} num_gc_contested` Governor's Council challenges,
+`{r} num_state_sen_contested` State Senate challenges, and
+`{r} num_state_rep_contested` State Rep. challenges in addition to
+the `{r} num_primary_challenges` incumbents with primaries mentioned
+earlier.
+
+### U.S. Senate contested
+
+```{r}
+office_table_display(contested_view, "Senator in Congress")
+```
+
+### U.S. Congress contested
+
+```{r}
+office_table_display(contested_view, "Representative in Congress")
+```
+
+### Governor's Councile contested
+
+```{r}
+office_table_display(contested_view, "Governor's Council")
+```
+
+### State Senate contested
+
+```{r}
+office_table_display(contested_view, "State Senate")
+```
+
+### State Representative contested
+
+```{r}
+office_table_display(contested_view, "State Representative")
+```
+
