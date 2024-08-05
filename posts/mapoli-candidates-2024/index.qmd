@@ -4,6 +4,7 @@ subtitle: "A detailed overview of primary and general races"
 author: "Brent Benson"
 date: "2024-08-04"
 categories: [elections, politics, mapoli]
+image: state_senate_inc_primaries.png
 execute:
   echo: false
 format:
