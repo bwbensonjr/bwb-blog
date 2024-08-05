@@ -219,8 +219,9 @@ open_seats_view <- open_seats %>%
 
 There are `{r} nrow(open_seats)` seats where the sitting incumbent is
 not running. There is a section in the header listing the incumbent
-with other details. At least eight of the incumbents are running for a
-different office or have been appointed to another governmental role.
+with other details&mdash;at least eight of the incumbents are running
+for a different office or have been appointed to another governmental
+role.
 
 ### Open Governor's Council
 
