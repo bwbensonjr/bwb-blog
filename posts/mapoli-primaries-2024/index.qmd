@@ -1,0 +1,259 @@
+---
+title: Massachusetts 2024 State Primary
+subtitle: "Contested primaries for the state legislatures and Governor's Council"
+author: "Brent Benson"
+date: "2024-08-25"
+categories: [elections, politics, mapoli]
+image: state_rep_primary_map.png
+execute:
+  echo: false
+format:
+  html:
+    html-table-processing: none
+---
+
+```{r}
+#| output: false
+
+library(tidyverse)
+library(readxl)
+library(glue)
+library(gt)
+library(sf)
+library(tmap)
+
+tmap_mode(mode="view")
+
+# Color of group-row
+group_color <- "lightgrey"
+
+# Leave out registrars and clerks
+offices_to_cover <- c(
+    "State Representative",
+    "State Senate",
+    "Governor's Council",
+    "Representative in Congress",
+    "Senator in Congress"
+)      
+
+candidates <- read_excel("2024 Candidates 6.4.24.xlsx") %>%
+    # Column transformations
+    mutate(is_incumbent = (`Incumbent Y/N` == "Y"),
+           district = str_replace(District, " & ", " and "),
+           candidate = str_to_title(`Candidate`),
+                      street_address = str_split_i(Address, ", ", 1),
+           city_town = str_split_i(Address, ", ", 2),
+           display_name = str_glue("{candidate} ({Party}-{city_town})")) %>%
+    # Renaming and selection of columns to keep
+    select(office = Office,
+           district,
+           district_id = `District ID`,
+           candidate,
+           display_name,
+           is_incumbent,
+           party = Party,
+           street_address,
+           city_town,
+           statement = `Statement of Public Office/Political Designation`)
+
+calculated_incumbents <- read_csv("ma_incumbents_2024_08_03.csv") %>%
+    mutate(district = str_replace(district, " & ", " and "),
+           incumbent_party = str_sub(party_incumbent, 1, 1),
+           incumbent_display = str_glue("{name_incumbent} ({incumbent_party}-{city_town_incumbent})")) %>%
+    select(office,
+           district,
+           incumbent = name_incumbent,
+           incumbent_display,
+           incumbent_party,
+           incumbent_city_town = city_town_incumbent)
+
+running_incumbents <- candidates %>%
+    filter(is_incumbent) %>%
+    select(office,
+           district,
+           incumbent=candidate,
+           incumbent_display=display_name,
+           incumbent_party=party,
+           incumbent_city_town=city_town)
+
+# Give the set of candidates for a particular district,
+# return a dataframe with a column per party with the
+# count of the candidates in that party.
+party_counts <- function(candidates) {
+    candidates %>%
+        group_by(party) %>%
+        tally() %>%
+        pivot_wider(names_from=party, values_from=n)
+}
+
+district_summaries <- read_excel("notable_districts_2024.xlsx") %>%
+    filter(!is.na(summary)) %>%
+    select(district_id, summary)
+
+districts <- candidates %>%
+    # Transform into row-per seat
+    nest(candidate = c(candidate,
+                       display_name,
+                       is_incumbent,
+                       party,
+                       street_address,
+                       city_town,
+                       statement)) %>%
+    # Join to incumbency data
+    left_join(running_incumbents, by=c("office", "district")) %>%
+    # District-level data
+    mutate(num_candidates = map_int(candidate, nrow),
+           is_contested = (num_candidates > 1),
+           is_open = is.na(incumbent),
+           parties = map(candidate, party_counts)) %>%
+    unnest(parties) %>%
+    # This only handles D, R, and U for `party`
+    replace_na(list(D=0, R=0, U=0)) %>%
+    mutate(inc_party_count = case_when(
+        incumbent_party == "D" ~ D,
+        incumbent_party == "R" ~ R,
+        incumbent_party == "U" ~ U,
+        TRUE ~ NA_real_)) %>%
+    mutate(incumbent_primary = (inc_party_count > 1),
+           dem_primary = (D > 1),
+           gop_primary = (R > 1),
+           party_primary = (dem_primary | gop_primary),
+           primary_type = case_when(
+               (dem_primary & gop_primary) ~ "Both",
+               dem_primary ~ "Democratic",
+               gop_primary ~ "Republican",
+               TRUE ~ "Neither"
+               ),
+           contested_no_primary = (is_contested & !incumbent_primary)) %>%
+    left_join(district_summaries, by="district_id") %>%
+    rows_patch(calculated_incumbents,
+               by=c("office", "district"),
+               unmatched="ignore") %>%
+    filter(office %in% offices_to_cover)
+
+## notable_districts <- districts %>%
+##     filter(office %in% offices_to_cover,
+##           (incumbent_primary | is_open | contested_no_primary)) %>%
+##     mutate(candidate_names = map_chr(candidate,
+##                                      ~paste(.x$display_name, collapse = ", ")))
+##
+## notable_districts %>% write_csv("notable_districts_2024.csv")
+
+office_table_display <- function(df, office_group) {
+    df %>%
+        filter(office == office_group) %>%
+        select(-office) %>%
+        gt(groupname_col="row_group", process_md=TRUE) %>%
+        tab_options(
+            column_labels.hidden=TRUE,
+            row_group.background.color = group_color) %>%
+        sub_missing(missing_text="") %>%
+        cols_align(columns="display_name", align="right") %>%
+        opt_row_striping(row_striping=FALSE)
+}
+```
+
+This overview covers U.S. Senate, U.S. Congress, State Senate, State
+Represenative, and Governor's Council contested primaries on September
+3, 2024.
+
+```{r}
+districts %>%
+    group_by(office) %>%
+    summarize(Races = n(),
+              `Incumbent Primaries` = sum(if_else(incumbent_primary, 1, 0), na.rm=TRUE),
+              `Dem. Primaries` = sum(if_else(dem_primary, 1, 0)),
+              `GOP Primaries` = sum(if_else(gop_primary, 1, 0))) %>%
+    arrange(factor(office, levels=offices_to_cover)) %>%
+    gt()
+```
+
+```{r}
+primary_view <- districts %>%
+    select(office, district, summary, incumbent_display, dem_primary, gop_primary, candidate) %>%
+    unnest(candidate) %>%
+    select(office, district, summary, display_name, statement, party,
+           is_incumbent, incumbent_display, dem_primary, gop_primary) %>%
+    mutate(incumbent = if_else(is_incumbent, "Incumbent", "")) %>%
+    group_by(office, district) %>%
+    filter(((party == "D") & dem_primary) |
+           ((party == "R") & gop_primary)) %>%
+    arrange(party) %>%
+    ungroup() %>%
+    mutate(row_group = str_glue("**{office} - {district}**<br/>*Incumbent {incumbent_display} {summary}*")) %>%
+    select(office, row_group, incumbent, display_name, statement)
+```
+
+### State Representative
+
+```{r}
+#| column: page
+
+sr_primary_districts <- districts %>%
+    filter(office == "State Representative")
+
+sr_geom <- read_sf("https://bwbensonjr.github.io/mapoli/gis/geojson/house2021.geojson") %>%
+    right_join(sr_primary_districts, by="district")
+
+(tm_shape(sr_geom) +
+ tm_fill(col="primary_type",
+         palette=c("Democratic"="#3E74C6",
+                   "Republican"="#FF4949",
+                   "Both"="purple",
+                   "Neither"=NA)) +
+ tm_borders(lwd=1, col="black") +
+ tm_basemap("OpenStreetMap"))
+```
+
+<br/>
+
+There are surprising number incumbent primary challenges for sitting State
+Representatives&mdash;fifteen in all.
+
+```{r}
+office_table_display(primary_view, "State Representative")
+```
+
+### State Senate
+
+Incumbent State Senators Mark Montigny (D-New Bedford), Adam Gomez
+(D-Springfield), and Nick Collins (D-Boston) all face primary
+challengers. State Representative Bill Driscoll (D-Milton) is running
+for the Norfolk, Plymouth and Bristol seat held by retiring Senator
+Walter Timilty (D-Milton).
+
+```{r}
+office_table_display(primary_view, "State Senate")
+```
+
+### Governor's Council
+
+There are two incumbent primary challenges and an open seat for the
+Governor's Council. Mara Dolan stands a very good chance of unseating
+Devaney who has held the seat for 25 years.
+
+```{r}
+office_table_display(primary_view, "Governor's Council")
+```
+
+### U.S. Congress
+
+None of Stephen Lynch's GOP challengers seem to be taking this race
+seriously. Only Govatsos has raised any money&mdash;less than $5,000.
+
+```{r}
+office_table_display(primary_view, "Representative in Congress")
+```
+
+## U.S. Senate
+
+Three Republicans have qualified to be on the ballot September 3rd and
+will face off in a primary. Deaton has raised close to a half a
+million dollars, but has less-than-stellar chance against Elizabeth
+Warren if he makes it to the general.
+
+```{r}
+office_table_display(primary_view, "Senator in Congress")
+    
+```
+

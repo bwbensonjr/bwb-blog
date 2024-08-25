@@ -1,0 +1,221 @@
+office_branch,office_id,office,district,district_display,district_id,election_id,election_date,is_special,id_incumbent,name_incumbent,party_incumbent,city_town_incumbent
+Executive,3,Governor,NA,NA,NA,154338,2022-11-08,FALSE,77961,Maura Healey,Democratic,NA
+Executive,529,Governor's Council,Eighth,8th,64610,154361,2022-11-08,FALSE,88280,Tara J. Jacobs,Democratic,North Adams
+Executive,529,Governor's Council,Fifth,5th,64607,154373,2022-11-08,FALSE,74538,Eileen R. Duff,Democratic,Gloucester
+Executive,529,Governor's Council,First,1st,64603,154352,2022-11-08,FALSE,77974,Joseph C. Ferreira,Democratic,Swansea
+Executive,529,Governor's Council,Fourth,4th,64606,154335,2022-11-08,FALSE,71194,"Christopher A. Iannella, Jr.",Democratic,Boston
+Executive,529,Governor's Council,Second,2nd,64604,154406,2022-11-08,FALSE,73658,Robert L. Jubinville,Democratic,Milton
+Executive,529,Governor's Council,Seventh,7th,64609,154400,2022-11-08,FALSE,78580,Paul M. Depalo,Democratic,Worcester
+Executive,529,Governor's Council,Sixth,6th,64608,154444,2022-11-08,FALSE,73739,Terrence W. Kennedy,Democratic,Lynnfield
+Executive,529,Governor's Council,Third,3rd,64605,154345,2022-11-08,FALSE,72070,Marilyn Petitto Devaney,Democratic,Watertown
+Legislative,8,State Representative,"Barnstable, Dukes and Nantucket","Barnstable, Dukes and Nantucket",62910,154390,2022-11-08,FALSE,78361,Dylan A. Fernandes,Democratic,Falmouth
+Legislative,8,State Representative,Eighteenth Essex,18th Essex,58773,154385,2022-11-08,FALSE,78568,Tram T. Nguyen,Democratic,Andover
+Legislative,8,State Representative,Eighteenth Middlesex,18th Middlesex,58808,154542,2022-11-08,FALSE,78100,Rady Mom,Democratic,Lowell
+Legislative,8,State Representative,Eighteenth Suffolk,18th Suffolk,58872,154447,2022-11-08,FALSE,62954,Michael J. Moran,Democratic,Boston
+Legislative,8,State Representative,Eighteenth Worcester,18th Worcester,58891,154504,2022-11-08,FALSE,78070,Joseph D. Mckenna,Republican,Webster
+Legislative,8,State Representative,Eighth Bristol,8th Bristol,58749,154357,2022-11-08,FALSE,74519,"Paul Schmid, III",Democratic,Westport
+Legislative,8,State Representative,Eighth Essex,8th Essex,58763,154544,2022-11-08,FALSE,88400,Jennifer Wb Armini,Democratic,Marblehead
+Legislative,8,State Representative,Eighth Hampden,8th Hampden,58783,154494,2022-11-08,FALSE,88366,Shirley B. Arriaga,Democratic,Chicopee
+Legislative,8,State Representative,Eighth Middlesex,8th Middlesex,58798,154533,2022-11-08,FALSE,72935,James Arena-DeRosa,Democratic,Holliston
+Legislative,8,State Representative,Eighth Norfolk,8th Norfolk,58835,154554,2022-11-08,FALSE,82268,Ted Philips,Democratic,Sharon
+Legislative,8,State Representative,Eighth Plymouth,8th Plymouth,58850,154475,2022-11-08,FALSE,62908,Angelo L. D'Emilia,Republican,Bridgewater
+Legislative,8,State Representative,Eighth Suffolk,8th Suffolk,58862,154448,2022-11-08,FALSE,77853,Jay D. Livingstone,Democratic,Boston
+Legislative,8,State Representative,Eighth Worcester,8th Worcester,58881,154432,2022-11-08,FALSE,78013,Michael J. Soter,Republican,Bellingham
+Legislative,8,State Representative,Eleventh Bristol,11th Bristol,58752,154561,2022-11-08,FALSE,78542,Christopher Hendricks,Democratic,New Bedford
+Legislative,8,State Representative,Eleventh Essex,11th Essex,58766,154545,2022-11-08,FALSE,78680,Peter L. Capano,Democratic,Lynn
+Legislative,8,State Representative,Eleventh Hampden,11th Hampden,58786,154579,2022-11-08,FALSE,72455,Bud L. Williams,Democratic,Springfield
+Legislative,8,State Representative,Eleventh Middlesex,11th Middlesex,58801,154563,2022-11-08,FALSE,62813,Kay S. Khan,Democratic,Newton
+Legislative,8,State Representative,Eleventh Norfolk,11th Norfolk,58838,154502,2022-11-08,FALSE,62881,Paul McMurtry,Democratic,Dedham
+Legislative,8,State Representative,Eleventh Plymouth,11th Plymouth,58853,154477,2022-11-08,FALSE,88356,Rita A. Mendes,Democratic,Brockton
+Legislative,8,State Representative,Eleventh Suffolk,11th Suffolk,58865,154492,2022-11-08,FALSE,88363,Judith A. Garcia,Democratic,Chelsea
+Legislative,8,State Representative,Eleventh Worcester,11th Worcester,58884,154576,2022-11-08,FALSE,78173,Hannah E. Kane,Republican,Shrewsbury
+Legislative,8,State Representative,Fifteenth Essex,15th Essex,58770,154528,2022-11-08,FALSE,88390,Ryan M. Hamilton,Democratic,Methuen
+Legislative,8,State Representative,Fifteenth Middlesex,15th Middlesex,58805,154539,2022-11-08,FALSE,78675,Michelle Ciccolo,Democratic,Lexington
+Legislative,8,State Representative,Fifteenth Norfolk,15th Norfolk,58842,154480,2022-11-08,FALSE,78634,Tommy Vitolo,Democratic,Brookline
+Legislative,8,State Representative,Fifteenth Suffolk,15th Suffolk,58869,154449,2022-11-08,FALSE,88341,Samantha Montano,Democratic,Boston
+Legislative,8,State Representative,Fifteenth Worcester,15th Worcester,58888,154587,2022-11-08,FALSE,74630,Mary S. Keefe,Democratic,Worcester
+Legislative,8,State Representative,Fifth Barnstable,5th Barnstable,58737,154423,2022-11-08,FALSE,82206,Steven G. Xiarhos,Republican,Barnstable
+Legislative,8,State Representative,Fifth Bristol,5th Bristol,58746,154503,2022-11-08,FALSE,62691,Patricia A. Haddad,Democratic,Somerset
+Legislative,8,State Representative,Fifth Essex,5th Essex,58760,154513,2022-11-08,FALSE,62720,Ann-Margaret Ferrante,Democratic,Gloucester
+Legislative,8,State Representative,Fifth Hampden,5th Hampden,58780,154495,2022-11-08,FALSE,72456,Patricia A. Duffy,Democratic,Holyoke
+Legislative,8,State Representative,Fifth Middlesex,5th Middlesex,58795,154560,2022-11-08,FALSE,62801,David Paul Linsky,Democratic,Natick
+Legislative,8,State Representative,Fifth Norfolk,5th Norfolk,58832,154472,2022-11-08,FALSE,74594,Mark J. Cusack,Democratic,Braintree
+Legislative,8,State Representative,Fifth Plymouth,5th Plymouth,58847,154527,2022-11-08,FALSE,78083,David F. Decoste,Republican,Norwell
+Legislative,8,State Representative,Fifth Suffolk,5th Suffolk,58859,154450,2022-11-08,FALSE,88344,Christopher J. Worrell,Democratic,Boston
+Legislative,8,State Representative,Fifth Worcester,5th Worcester,58878,154426,2022-11-08,FALSE,78024,"Donald R. Berthiaume, Jr",Republican,Spencer
+Legislative,8,State Representative,First Barnstable,1st Barnstable,58733,154474,2022-11-08,FALSE,88353,Christopher Richard Flanagan,Democratic,Dennis
+Legislative,8,State Representative,First Berkshire,1st Berkshire,58738,154364,2022-11-08,FALSE,68135,"John P. Barrett, III",Democratic,North Adams
+Legislative,8,State Representative,First Bristol,1st Bristol,58742,154519,2022-11-08,FALSE,62682,Fred Jay Barrows,Republican,Mansfield
+Legislative,8,State Representative,First Essex,1st Essex,58756,154376,2022-11-08,FALSE,88290,Dawne F. Shand,Democratic,Newburyport
+Legislative,8,State Representative,First Franklin,1st Franklin,58774,154404,2022-11-08,FALSE,78585,Natalie M. Blais,Democratic,Deerfield
+Legislative,8,State Representative,First Hampden,1st Hampden,58776,154476,2022-11-08,FALSE,62764,Todd M. Smola,Republican,Warren
+Legislative,8,State Representative,First Hampshire,1st Hampshire,58788,154493,2022-11-08,FALSE,78665,Lindsay N. Sabadosa,Democratic,Northampton
+Legislative,8,State Representative,First Middlesex,1st Middlesex,58791,154401,2022-11-08,FALSE,88313,Margaret R. Scarsdale,Democratic,Pepperell
+Legislative,8,State Representative,First Norfolk,1st Norfolk,58828,154570,2022-11-08,FALSE,62861,Bruce J. Ayers,Democratic,Quincy
+Legislative,8,State Representative,First Plymouth,1st Plymouth,58843,154569,2022-11-08,FALSE,78121,Mathew J. Muratore,Republican,Plymouth
+Legislative,8,State Representative,First Suffolk,1st Suffolk,58855,154451,2022-11-08,FALSE,78169,Adrian C. Madaro,Democratic,Boston
+Legislative,8,State Representative,First Worcester,1st Worcester,58874,154532,2022-11-08,FALSE,62956,Kimberly N. Ferguson,Republican,Holden
+Legislative,8,State Representative,Fourteenth Bristol,14th Bristol,58755,154411,2022-11-08,FALSE,82188,Adam J. Scanlon,Democratic,North Attleborough
+Legislative,8,State Representative,Fourteenth Essex,14th Essex,58769,154377,2022-11-08,FALSE,88293,Adrianne Ramos,Democratic,North Andover
+Legislative,8,State Representative,Fourteenth Middlesex,14th Middlesex,58804,154348,2022-11-08,FALSE,88268,Simon Cataldo,Democratic,Concord
+Legislative,8,State Representative,Fourteenth Norfolk,14th Norfolk,58841,154540,2022-11-08,FALSE,62889,Alice Hanlon Peisch,Democratic,Wellesley
+Legislative,8,State Representative,Fourteenth Suffolk,14th Suffolk,58868,154452,2022-11-08,FALSE,82224,Rob Consalvo,Democratic,Boston
+Legislative,8,State Representative,Fourteenth Worcester,14th Worcester,58887,154585,2022-11-08,FALSE,73608,James J. O'Day,Democratic,West Boylston
+Legislative,8,State Representative,Fourth Barnstable,4th Barnstable,58736,154489,2022-11-08,FALSE,62665,Sarah K. Peake,Democratic,Provincetown
+Legislative,8,State Representative,Fourth Bristol,4th Bristol,58745,154565,2022-11-08,FALSE,62689,Steven S. Howitt,Republican,Seekonk
+Legislative,8,State Representative,Fourth Essex,4th Essex,58759,154535,2022-11-08,FALSE,88396,Estela A. Reyes,Democratic,Lawrence
+Legislative,8,State Representative,Fourth Hampden,4th Hampden,58779,154578,2022-11-08,FALSE,82283,Kelly W. Pease,Republican,Westfield
+Legislative,8,State Representative,Fourth Middlesex,4th Middlesex,58794,154520,2022-11-08,FALSE,62799,Danielle W. Gregoire,Democratic,Marlborough
+Legislative,8,State Representative,Fourth Norfolk,4th Norfolk,58831,154586,2022-11-08,FALSE,62869,James Michael Murphy,Democratic,Weymouth
+Legislative,8,State Representative,Fourth Plymouth,4th Plymouth,58846,154555,2022-11-08,FALSE,78688,Patrick Joseph Kearney,Democratic,Scituate
+Legislative,8,State Representative,Fourth Suffolk,4th Suffolk,58858,154453,2022-11-08,FALSE,78622,David Biele,Democratic,Boston
+Legislative,8,State Representative,Fourth Worcester,4th Worcester,58877,154538,2022-11-08,FALSE,78423,Natalie Higgins,Democratic,Leominster
+Legislative,8,State Representative,Nineteenth Middlesex,19th Middlesex,58809,154583,2022-11-08,FALSE,88422,David A. Robertson,Democratic,Wilmington
+Legislative,8,State Representative,Nineteenth Suffolk,19th Suffolk,58873,154573,2022-11-08,FALSE,72209,Jeffrey Rosario Turco,Democratic,Winthrop
+Legislative,8,State Representative,Nineteenth Worcester,19th Worcester,64670,154521,2022-11-08,FALSE,74316,Kate Donaghue,Democratic,Westborough
+Legislative,8,State Representative,Ninth Bristol,9th Bristol,58750,154501,2022-11-08,FALSE,62701,Christopher M. Markey,Democratic,Dartmouth
+Legislative,8,State Representative,Ninth Essex,9th Essex,58764,154546,2022-11-08,FALSE,62732,Donald H. Wong,Republican,Saugus
+Legislative,8,State Representative,Ninth Hampden,9th Hampden,58784,154580,2022-11-08,FALSE,82245,Orlando Ramos,Democratic,Springfield
+Legislative,8,State Representative,Ninth Middlesex,9th Middlesex,58799,154584,2022-11-08,FALSE,62810,Thomas M. Stanley,Democratic,Waltham
+Legislative,8,State Representative,Ninth Norfolk,9th Norfolk,58836,154556,2022-11-08,FALSE,88411,Marcus S. Vaughn,Republican,Wrentham
+Legislative,8,State Representative,Ninth Plymouth,9th Plymouth,58851,154478,2022-11-08,FALSE,78180,Gerard J. Cassidy,Democratic,Brockton
+Legislative,8,State Representative,Ninth Suffolk,9th Suffolk,58863,160299,2023-05-30,TRUE,92666,John Francis Moran,Democratic,Boston
+Legislative,8,State Representative,Ninth Worcester,9th Worcester,58882,154525,2022-11-08,FALSE,78082,"David K. Muradian, Jr",Republican,Grafton
+Legislative,8,State Representative,Second Barnstable,2nd Barnstable,58734,154424,2022-11-08,FALSE,82209,Kip A. Diggs,Democratic,Barnstable
+Legislative,8,State Representative,Second Berkshire,2nd Berkshire,58739,154568,2022-11-08,FALSE,74627,Tricia Farley-Bouvier,Democratic,Pittsfield
+Legislative,8,State Representative,Second Bristol,2nd Bristol,58743,154412,2022-11-08,FALSE,78500,James K. Hawkins,Democratic,Attleboro
+Legislative,8,State Representative,Second Essex,2nd Essex,58757,154524,2022-11-08,FALSE,88388,Kristin E. Kassner,Democratic,Hamilton
+Legislative,8,State Representative,Second Franklin,2nd Franklin,58775,154409,2022-11-08,FALSE,78007,Susannah M. Whipps,Unenrolled,Athol
+Legislative,8,State Representative,Second Hampden,2nd Hampden,58777,154509,2022-11-08,FALSE,62766,Brian M. Ashe,Democratic,Longmeadow
+Legislative,8,State Representative,Second Hampshire,2nd Hampshire,58789,154511,2022-11-08,FALSE,78652,Daniel R. Carey,Democratic,Easthampton
+Legislative,8,State Representative,Second Middlesex,2nd Middlesex,58792,154490,2022-11-08,FALSE,62796,James Arciero,Democratic,Westford
+Legislative,8,State Representative,Second Norfolk,2nd Norfolk,58829,154571,2022-11-08,FALSE,62862,Tackey Chan,Democratic,Quincy
+Legislative,8,State Representative,Second Plymouth,2nd Plymouth,58844,154487,2022-11-08,FALSE,62894,Susan Williams Gifford,Republican,Wareham
+Legislative,8,State Representative,Second Suffolk,2nd Suffolk,58856,154455,2022-11-08,FALSE,77944,Daniel Joseph Ryan,Democratic,Boston
+Legislative,8,State Representative,Second Worcester,2nd Worcester,58875,154398,2022-11-08,FALSE,74568,Jonathan D. Zlotnik,Democratic,Gardner
+Legislative,8,State Representative,Seventeenth Essex,17th Essex,58772,154386,2022-11-08,FALSE,74549,Frank A. Moran,Democratic,Lawrence
+Legislative,8,State Representative,Seventeenth Middlesex,17th Middlesex,58807,154543,2022-11-08,FALSE,82239,Vanna Howard,Democratic,Lowell
+Legislative,8,State Representative,Seventeenth Suffolk,17th Suffolk,58871,154456,2022-11-08,FALSE,62953,Kevin G. Honan,Democratic,Boston
+Legislative,8,State Representative,Seventeenth Worcester,17th Worcester,58890,154537,2022-11-08,FALSE,78671,David Henry Argosky Leboeuf,Democratic,Worcester
+Legislative,8,State Representative,Seventh Bristol,7th Bristol,58748,154515,2022-11-08,FALSE,62696,Alan Silvia,Democratic,Fall River
+Legislative,8,State Representative,Seventh Essex,7th Essex,58762,154575,2022-11-08,FALSE,88417,Manny Cruz,Democratic,Salem
+Legislative,8,State Representative,Seventh Hampden,7th Hampden,58782,154430,2022-11-08,FALSE,78030,Aaron L. Saunders,Democratic,Belchertown
+Legislative,8,State Representative,Seventh Middlesex,7th Middlesex,58797,154407,2022-11-08,FALSE,78371,Jack Patrick Lewis,Democratic,Framingham
+Legislative,8,State Representative,Seventh Norfolk,7th Norfolk,58834,154558,2022-11-08,FALSE,78434,"William J. Driscoll, Jr",Democratic,Milton
+Legislative,8,State Representative,Seventh Plymouth,7th Plymouth,58849,154340,2022-11-08,FALSE,78515,Alyson M. Sullivan,Republican,Abington
+Legislative,8,State Representative,Seventh Suffolk,7th Suffolk,58861,154457,2022-11-08,FALSE,78393,Chynah Tyler,Democratic,Boston
+Legislative,8,State Representative,Seventh Worcester,7th Worcester,58880,154414,2022-11-08,FALSE,62972,Paul K. Frost,Republican,Auburn
+Legislative,8,State Representative,Sixteenth Essex,16th Essex,58771,154536,2022-11-08,FALSE,88397,Francisco E. Paulino,Democratic,Methuen
+Legislative,8,State Representative,Sixteenth Middlesex,16th Middlesex,58806,154491,2022-11-08,FALSE,78645,Rodney M. Elliott,Democratic,Lowell
+Legislative,8,State Representative,Sixteenth Suffolk,16th Suffolk,58870,154574,2022-11-08,FALSE,82240,Jessica Ann Giannino,Democratic,Revere
+Legislative,8,State Representative,Sixteenth Worcester,16th Worcester,58889,154588,2022-11-08,FALSE,77866,Daniel M. Donahue,Democratic,Worcester
+Legislative,8,State Representative,Sixth Bristol,6th Bristol,58747,154516,2022-11-08,FALSE,72311,Carole A. Fiola,Democratic,Fall River
+Legislative,8,State Representative,Sixth Essex,6th Essex,58761,154439,2022-11-08,FALSE,62723,Jerald A. Parisella,Democratic,Beverly
+Legislative,8,State Representative,Sixth Hampden,6th Hampden,58781,154368,2022-11-08,FALSE,62774,Michael J. Finn,Democratic,West Springfield
+Legislative,8,State Representative,Sixth Middlesex,6th Middlesex,58796,154522,2022-11-08,FALSE,88386,Priscila S. Sousa,Democratic,Framingham
+Legislative,8,State Representative,Sixth Norfolk,6th Norfolk,58833,154418,2022-11-08,FALSE,62875,William C. Galvin,Democratic,Canton
+Legislative,8,State Representative,Sixth Plymouth,6th Plymouth,58848,154508,2022-11-08,FALSE,62904,Josh S. Cutler,Democratic,Duxbury
+Legislative,8,State Representative,Sixth Suffolk,6th Suffolk,58860,154458,2022-11-08,FALSE,62932,Russell E. Holmes,Democratic,Boston
+Legislative,8,State Representative,Sixth Worcester,6th Worcester,58879,160911,2024-03-05,TRUE,92851,"John J. Marsi, Jr",Republican,Dudley
+Legislative,8,State Representative,Tenth Bristol,10th Bristol,58751,154358,2022-11-08,FALSE,62706,William M. Straus,Democratic,Mattapoisett
+Legislative,8,State Representative,Tenth Essex,10th Essex,58765,154547,2022-11-08,FALSE,70679,Daniel H. Cahill,Democratic,Lynn
+Legislative,8,State Representative,Tenth Hampden,10th Hampden,58785,154581,2022-11-08,FALSE,78123,Carlos Gonzalez,Democratic,Springfield
+Legislative,8,State Representative,Tenth Middlesex,10th Middlesex,58800,154564,2022-11-08,FALSE,73819,"John J. Lawn, Jr.",Democratic,Watertown
+Legislative,8,State Representative,Tenth Norfolk,10th Norfolk,58837,154523,2022-11-08,FALSE,74613,Jeffrey N. Roy,Democratic,Franklin
+Legislative,8,State Representative,Tenth Plymouth,10th Plymouth,58852,154479,2022-11-08,FALSE,78056,Michelle M. Dubois,Democratic,Brockton
+Legislative,8,State Representative,Tenth Suffolk,10th Suffolk,58864,160300,2023-05-30,TRUE,92668,Bill Macgregor,Democratic,Boston
+Legislative,8,State Representative,Tenth Worcester,10th Worcester,58883,154534,2022-11-08,FALSE,88394,Brian William Murray,Democratic,Milford
+Legislative,8,State Representative,Third Barnstable,3rd Barnstable,58735,154469,2022-11-08,FALSE,62662,David T. Vieira,Republican,Falmouth
+Legislative,8,State Representative,Third Berkshire,3rd Berkshire,58740,154372,2022-11-08,FALSE,62681,"William ""Smitty"" Pignatelli",Democratic,Lenox
+Legislative,8,State Representative,Third Bristol,3rd Bristol,58744,154512,2022-11-08,FALSE,70523,Carol A. Doherty,Democratic,Taunton
+Legislative,8,State Representative,Third Essex,3rd Essex,58758,154529,2022-11-08,FALSE,78494,Andres X. Vargas,Democratic,Haverhill
+Legislative,8,State Representative,Third Hampden,3rd Hampden,58778,154369,2022-11-08,FALSE,62768,Nicholas A. Boldyga,Republican,Southwick
+Legislative,8,State Representative,Third Hampshire,3rd Hampshire,58790,154382,2022-11-08,FALSE,78562,Mindy Domb,Democratic,Amherst
+Legislative,8,State Representative,Third Middlesex,3rd Middlesex,58793,154443,2022-11-08,FALSE,62797,Kate Hogan,Democratic,Stow
+Legislative,8,State Representative,Third Norfolk,3rd Norfolk,58830,154531,2022-11-08,FALSE,62867,Ronald Mariano,Democratic,Quincy
+Legislative,8,State Representative,Third Plymouth,3rd Plymouth,58845,154497,2022-11-08,FALSE,78308,Joan Meschino,Democratic,Hull
+Legislative,8,State Representative,Third Suffolk,3rd Suffolk,58857,154460,2022-11-08,FALSE,62921,Aaron M. Michlewitz,Democratic,Boston
+Legislative,8,State Representative,Third Worcester,3rd Worcester,58876,154518,2022-11-08,FALSE,78496,Michael P. Kushmerek,Democratic,Fitchburg
+Legislative,8,State Representative,Thirteenth Bristol,13th Bristol,58754,154562,2022-11-08,FALSE,88412,Antonio d. F. Cabral,Democratic,New Bedford
+Legislative,8,State Representative,Thirteenth Essex,13th Essex,58768,154500,2022-11-08,FALSE,70818,Sally P. Kerans,Democratic,Danvers
+Legislative,8,State Representative,Thirteenth Middlesex,13th Middlesex,58803,154499,2022-11-08,FALSE,78078,Carmine Lawrence Gentile,Democratic,Sudbury
+Legislative,8,State Representative,Thirteenth Norfolk,13th Norfolk,58840,154505,2022-11-08,FALSE,62884,Denise C. Garlick,Democratic,Needham
+Legislative,8,State Representative,Thirteenth Suffolk,13th Suffolk,58867,154461,2022-11-08,FALSE,77947,Daniel J. Hunt,Democratic,Boston
+Legislative,8,State Representative,Thirteenth Worcester,13th Worcester,58886,154589,2022-11-08,FALSE,62988,"John J. Mahoney, Jr.",Democratic,Worcester
+Legislative,8,State Representative,Thirtieth Middlesex,30th Middlesex,58820,154572,2022-11-08,FALSE,78693,Richard M. Haggerty,Democratic,Woburn
+Legislative,8,State Representative,Thirty-Fifth Middlesex,35th Middlesex,58825,154550,2022-11-08,FALSE,62854,"Paul J. Donato, Sr.",Democratic,Medford
+Legislative,8,State Representative,Thirty-First Middlesex,31st Middlesex,58821,154582,2022-11-08,FALSE,63046,Michael Seamus Day,Democratic,Stoneham
+Legislative,8,State Representative,Thirty-Fourth Middlesex,34th Middlesex,58824,154557,2022-11-08,FALSE,78112,Christine P. Barber,Democratic,Somerville
+Legislative,8,State Representative,Thirty-Second Middlesex,32nd Middlesex,58822,154551,2022-11-08,FALSE,79762,Kate Lipper-Garabedian,Democratic,Melrose
+Legislative,8,State Representative,Thirty-Seventh Middlesex,37th Middlesex,58827,154349,2022-11-08,FALSE,80799,Danillo A. Sena,Democratic,Acton
+Legislative,8,State Representative,Thirty-Sixth Middlesex,36th Middlesex,58826,154506,2022-11-08,FALSE,62857,Colleen M. Garry,Democratic,Dracut
+Legislative,8,State Representative,Thirty-Third Middlesex,33rd Middlesex,58823,154552,2022-11-08,FALSE,78109,Steven Ultrino,Democratic,Malden
+Legislative,8,State Representative,Twelfth Bristol,12th Bristol,58753,154435,2022-11-08,FALSE,78295,Norman J. Orrall,Republican,Lakeville
+Legislative,8,State Representative,Twelfth Essex,12th Essex,58767,154567,2022-11-08,FALSE,70044,Thomas P. Walsh,Democratic,Peabody
+Legislative,8,State Representative,Twelfth Hampden,12th Hampden,58787,154510,2022-11-08,FALSE,62785,"Angelo J. Puppolo, Jr.",Democratic,Springfield
+Legislative,8,State Representative,Twelfth Middlesex,12th Middlesex,58802,154481,2022-11-08,FALSE,62814,Ruth B. Balser,Democratic,Newton
+Legislative,8,State Representative,Twelfth Norfolk,12th Norfolk,58839,154566,2022-11-08,FALSE,62882,John H. Rogers,Democratic,Norwood
+Legislative,8,State Representative,Twelfth Plymouth,12th Plymouth,58854,154526,2022-11-08,FALSE,78649,Kathleen R. Lanatra,Democratic,Kingston
+Legislative,8,State Representative,Twelfth Suffolk,12th Suffolk,58866,154462,2022-11-08,FALSE,82228,Brandy Fluker Oakley,Democratic,Boston
+Legislative,8,State Representative,Twelfth Worcester,12th Worcester,58885,154437,2022-11-08,FALSE,82215,Meghan Kilcoyne,Democratic,Clinton
+Legislative,8,State Representative,Twentieth Middlesex,20th Middlesex,58810,154549,2022-11-08,FALSE,62825,"Bradley H. Jones, Jr.",Republican,North Reading
+Legislative,8,State Representative,Twenty-Eighth Middlesex,28th Middlesex,58818,154514,2022-11-08,FALSE,77847,"Joseph W. Mcgonagle, Jr",Democratic,Everett
+Legislative,8,State Representative,Twenty-Fifth Middlesex,25th Middlesex,58815,154483,2022-11-08,FALSE,72472,Marjorie C. Decker,Democratic,Cambridge
+Legislative,8,State Representative,Twenty-First Middlesex,21st Middlesex,58811,154428,2022-11-08,FALSE,74584,Kenneth I. Gordon,Democratic,Bedford
+Legislative,8,State Representative,Twenty-Fourth Middlesex,24th Middlesex,58814,154394,2022-11-08,FALSE,74565,David M. Rogers,Democratic,Cambridge
+Legislative,8,State Representative,Twenty-Ninth Middlesex,29th Middlesex,58819,154484,2022-11-08,FALSE,78243,Steven C. Owens,Democratic,Watertown
+Legislative,8,State Representative,Twenty-Second Middlesex,22nd Middlesex,58812,154441,2022-11-08,FALSE,62829,Marc T. Lombardo,Republican,Billerica
+Legislative,8,State Representative,Twenty-Seventh Middlesex,27th Middlesex,58817,154577,2022-11-08,FALSE,82279,Erika Uyterhoeven,Democratic,Somerville
+Legislative,8,State Representative,Twenty-Sixth Middlesex,26th Middlesex,58816,154485,2022-11-08,FALSE,74600,Mike Connolly,Democratic,Cambridge
+Legislative,8,State Representative,Twenty-Third Middlesex,23rd Middlesex,58813,154395,2022-11-08,FALSE,62832,Sean Garballey,Democratic,Arlington
+Legislative,9,State Senate,"Berkshire, Hampden, Franklin & Hampshire","Berkshire, Hampden, Franklin & Hampshire",65020,154365,2022-11-08,FALSE,62674,Paul W. Mark,Democratic,Becket
+Legislative,9,State Senate,Bristol and Norfolk,Bristol and Norfolk,58695,154413,2022-11-08,FALSE,73554,Paul R. Feeney,Democratic,Foxborough
+Legislative,9,State Senate,Cape and Islands,Cape and Islands,58698,154391,2022-11-08,FALSE,78365,Julian Andre Cyr,Democratic,Truro
+Legislative,9,State Senate,Fifth Middlesex,5th Middlesex,64661,154553,2022-11-08,FALSE,62845,Jason M. Lewis,Democratic,Winchester
+Legislative,9,State Senate,First Bristol and Plymouth,1st Bristol and Plymouth,58696,154517,2022-11-08,FALSE,63004,Michael J. Rodrigues,Democratic,Westport
+Legislative,9,State Senate,First Essex,1st Essex,58699,154530,2022-11-08,FALSE,77996,Pavel M. Payano,Democratic,Lawrence
+Legislative,9,State Senate,First Essex and Middlesex,1st Essex and Middlesex,58700,154471,2022-11-08,FALSE,63016,Bruce E. Tarr,Republican,Gloucester
+Legislative,9,State Senate,First Middlesex,1st Middlesex,58707,154507,2022-11-08,FALSE,72703,Edward J. Kennedy,Democratic,Lowell
+Legislative,9,State Senate,First Plymouth & Norfolk,First Plymouth & Norfolk,65029,154498,2022-11-08,FALSE,82248,Patrick Michael O'Connor,Republican,Weymouth
+Legislative,9,State Senate,First Suffolk,1st Suffolk,58723,154463,2022-11-08,FALSE,82229,Nicholas P. Collins,Democratic,Boston
+Legislative,9,State Senate,First Worcester,1st Worcester,58728,154438,2022-11-08,FALSE,88332,Robyn K. Kennedy,Democratic,Worcester
+Legislative,9,State Senate,Fourth Middlesex,4th Middlesex,58710,154396,2022-11-08,FALSE,78484,Cindy F. Friedman,Democratic,Arlington
+Legislative,9,State Senate,Hampden,Hampden,58703,154496,2022-11-08,FALSE,82246,Adam Gomez,Democratic,Springfield
+Legislative,9,State Senate,Hampden and Hampshire,Hampden and Hampshire,64692,154370,2022-11-08,FALSE,77955,John C. Velis,Democratic,Westfield
+Legislative,9,State Senate,"Hampden, Hampshire & Worcester","Hampden, Hampshire & Worcester",65023,154431,2022-11-08,FALSE,82211,Jacob R. Oliveira,Democratic,Ludlow
+Legislative,9,State Senate,"Hampshire, Franklin and Worcester","Hampshire, Franklin and Worcester",64949,154383,2022-11-08,FALSE,88299,Jo Comerford,Democratic,Northampton
+Legislative,9,State Senate,Middlesex and Norfolk,Middlesex and Norfolk,64693,154408,2022-11-08,FALSE,63051,Karen E. Spilka,Democratic,Ashland
+Legislative,9,State Senate,Middlesex and Suffolk,Middlesex and Suffolk,64656,154464,2022-11-08,FALSE,73704,Sal N. DiDomenico,Democratic,Everett
+Legislative,9,State Senate,Middlesex and Worcester,Middlesex and Worcester,58715,154350,2022-11-08,FALSE,63052,James B. Eldridge,Democratic,Acton
+Legislative,9,State Senate,Norfolk & Middlesex,Norfolk & Middlesex,65028,154482,2022-11-08,FALSE,63048,Cynthia Stone Creem,Democratic,Newton
+Legislative,9,State Senate,Norfolk and Plymouth,Norfolk and Plymouth,58718,154342,2022-11-08,FALSE,63059,John F. Keenan,Democratic,Quincy
+Legislative,9,State Senate,Norfolk and Suffolk,Norfolk and Suffolk,64862,154465,2022-11-08,FALSE,63079,Michael F. Rush,Democratic,Boston
+Legislative,9,State Senate,"Norfolk, Plymouth & Bristol","Norfolk, Plymouth & Bristol",65027,154473,2022-11-08,FALSE,62876,"Walter F. Timilty, Jr.",Democratic,Milton
+Legislative,9,State Senate,"Norfolk, Worcester & Middlesex","Norfolk, Worcester & Middlesex",65024,154433,2022-11-08,FALSE,78595,Rebecca L. Rausch,Democratic,Needham
+Legislative,9,State Senate,Plymouth and Barnstable,Plymouth and Barnstable,58719,154470,2022-11-08,FALSE,80805,Susan Lynn Moran,Democratic,Falmouth
+Legislative,9,State Senate,Second Bristol and Plymouth,2nd Bristol and Plymouth,58697,154359,2022-11-08,FALSE,63005,Mark C. Montigny,Democratic,New Bedford
+Legislative,9,State Senate,Second Essex,2nd Essex,55780,154440,2022-11-08,FALSE,72640,Joan B. Lovely,Democratic,Salem
+Legislative,9,State Senate,Second Essex and Middlesex,2nd Essex and Middlesex,58701,154378,2022-11-08,FALSE,63017,Barry R. Finegold,Democratic,Andover
+Legislative,9,State Senate,Second Middlesex,2nd Middlesex,58708,154486,2022-11-08,FALSE,63040,Patricia D. Jehlen,Democratic,Somerville
+Legislative,9,State Senate,Second Plymouth & Norfolk,Second Plymouth & Norfolk,65021,154419,2022-11-08,FALSE,62910,Michael D. Brady,Democratic,Brockton
+Legislative,9,State Senate,Second Suffolk,2nd Suffolk,58724,154466,2022-11-08,FALSE,78618,Liz Miranda,Democratic,Boston
+Legislative,9,State Senate,Second Worcester,2nd Worcester,58729,154415,2022-11-08,FALSE,63084,Michael O. Moore,Democratic,Millbury
+Legislative,9,State Senate,Suffolk and Middlesex,Suffolk and Middlesex,64878,154434,2022-11-08,FALSE,62833,William N. Brownsberger,Democratic,Belmont
+Legislative,9,State Senate,Third Bristol & Plymouth,Third Bristol & Plymouth,65025,154436,2022-11-08,FALSE,63067,Marc R. Pacheco,Democratic,Taunton
+Legislative,9,State Senate,Third Essex,3rd Essex,64702,154548,2022-11-08,FALSE,78102,Brendan P. Crighton,Democratic,Lynn
+Legislative,9,State Senate,Third Middlesex,3rd Middlesex,58709,154429,2022-11-08,FALSE,68354,Michael J. Barrett,Democratic,Lexington
+Legislative,9,State Senate,Third Suffolk,3rd Suffolk,64948,154467,2022-11-08,FALSE,78304,Lydia Marie Edwards,Democratic,Boston
+Legislative,9,State Senate,Worcester & Hampden,Worcester & Hampden,65026,154442,2022-11-08,FALSE,62997,Ryan C. Fattman,Republican,Sutton
+Legislative,9,State Senate,Worcester & Hampshire,Worcester & Hampshire,65022,160410,2023-11-07,TRUE,62970,Peter J. Durant,Republican,Spencer
+Legislative,9,State Senate,Worcester and Middlesex,Worcester and Middlesex,58731,154402,2022-11-08,FALSE,82218,John J. Cronin,Democratic,Lunenburg
+Legislative,5,U.S. House,1,1st Congressional,58684,154363,2022-11-08,FALSE,62614,Richard E. Neal,Democratic,Springfield
+Legislative,5,U.S. House,2,2nd Congressional,58685,154381,2022-11-08,FALSE,62621,James P. McGovern,Democratic,Worcester
+Legislative,5,U.S. House,3,3rd Congressional,58686,154347,2022-11-08,FALSE,78529,Lori Loureiro Trahan,Democratic,Westford
+Legislative,5,U.S. House,4,4th Congressional,58687,154410,2022-11-08,FALSE,82179,Jake Auchincloss,Democratic,Newton
+Legislative,5,U.S. House,5,5th Congressional,58688,154393,2022-11-08,FALSE,63045,Katherine M. Clark,Democratic,Revere
+Legislative,5,U.S. House,6,6th Congressional,58689,154375,2022-11-08,FALSE,77992,Seth W. Moulton,Democratic,Salem
+Legislative,5,U.S. House,7,7th Congressional,58690,154446,2022-11-08,FALSE,78612,Ayanna S. Pressley,Democratic,Boston
+Legislative,5,U.S. House,8,8th Congressional,58691,154339,2022-11-08,FALSE,62647,Stephen F. Lynch,Democratic,Boston
+Legislative,5,U.S. House,9,9th Congressional,58692,154356,2022-11-08,FALSE,78539,Bill Keating,Democratic,Bourne
+Legislative,6,U.S. Senate,Class 1,Class 1,1,131505,2018-11-06,FALSE,74528,Elizabeth A. Warren,Democratic,Cambridge
+Legislative,6,U.S. Senate,Class 2,Class 2,2,140755,2020-11-03,FALSE,62640,Edward J. Markey,Democratic,Malden
