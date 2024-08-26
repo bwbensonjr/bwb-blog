@@ -216,7 +216,8 @@ office_primary_map(
 There are a fifteen races where a sitting incumbent State
 Representative is being challenged by someone from their own party and
 eleven races where the current State Representative is not running and
-their is at least one party primary.
+their is at least one party primary. These are pretty big numbers is
+both categories from a historical perspective.
 
 ### Incumbent Primaries
 
