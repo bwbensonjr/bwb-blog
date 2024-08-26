@@ -6,6 +6,8 @@ website:
   title: "Brent Benson"
   site-url: https://brentwbenson.org
   google-analytics: "G-VGEHLT4S8G"
+  twitter-card: true
+  open-graph: true
   navbar:
     right:
       - about.qmd
