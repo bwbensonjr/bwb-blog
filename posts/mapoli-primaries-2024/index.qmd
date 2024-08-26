@@ -189,6 +189,7 @@ office_primary_map <- function(office_group, geom, districts) {
                           filter(office == office_group)),
                          by="district")) +
      tm_fill(col="primary_type",
+             alpha=0.7,
              palette=c("Democratic"="#3E74C6",
                        "Republican"="#FF4949",
                        "Both"="purple",
