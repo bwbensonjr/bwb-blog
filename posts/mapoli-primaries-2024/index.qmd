@@ -1,6 +1,6 @@
 ---
-title: Massachusetts 2024 State Primary
-subtitle: "Contested primaries for the state legislatures and Governor's Council"
+title: Massachusetts 2024 State Primaries
+subtitle: "Contested primaries for the state legislature, Governor's Council, Congress, and Senate"
 author: "Brent Benson"
 date: "2024-08-25"
 categories: [elections, politics, mapoli]
@@ -122,7 +122,7 @@ districts <- candidates %>%
                (dem_primary & gop_primary) ~ "Both",
                dem_primary ~ "Democratic",
                gop_primary ~ "Republican",
-               TRUE ~ "Neither"
+               TRUE ~ "None"
                ),
            contested_no_primary = (is_contested & !incumbent_primary)) %>%
     left_join(district_summaries, by="district_id") %>%
@@ -139,23 +139,11 @@ districts <- candidates %>%
 ##
 ## notable_districts %>% write_csv("notable_districts_2024.csv")
 
-office_table_display <- function(df, office_group) {
-    df %>%
-        filter(office == office_group) %>%
-        select(-office) %>%
-        gt(groupname_col="row_group", process_md=TRUE) %>%
-        tab_options(
-            column_labels.hidden=TRUE,
-            row_group.background.color = group_color) %>%
-        sub_missing(missing_text="") %>%
-        cols_align(columns="display_name", align="right") %>%
-        opt_row_striping(row_striping=FALSE)
-}
 ```
 
-This overview covers U.S. Senate, U.S. Congress, State Senate, State
-Represenative, and Governor's Council contested primaries on September
-3, 2024.
+This overview covers contested primaries for State Representative,
+State Senate, Governor's Council, U.S. Congress, and U.S. Senate on
+September 3, 2024.
 
 ```{r}
 districts %>%
@@ -169,52 +157,101 @@ districts %>%
 ```
 
 ```{r}
-primary_view <- districts %>%
-    select(office, district, summary, incumbent_display, dem_primary, gop_primary, candidate) %>%
+primary_districts <- districts %>%
+    filter((D > 1) | (R > 1))
+
+primary_view <- primary_districts %>%
     unnest(candidate) %>%
-    select(office, district, summary, display_name, statement, party,
-           is_incumbent, incumbent_display, dem_primary, gop_primary) %>%
     mutate(incumbent = if_else(is_incumbent, "Incumbent", "")) %>%
     group_by(office, district) %>%
     filter(((party == "D") & dem_primary) |
            ((party == "R") & gop_primary)) %>%
     arrange(party) %>%
     ungroup() %>%
-    mutate(row_group = str_glue("**{office} - {district}**<br/>*Incumbent {incumbent_display} {summary}*")) %>%
-    select(office, row_group, incumbent, display_name, statement)
+    mutate(row_group = str_glue("**{office} - {district}**<br/>*Incumbent {incumbent_display} {summary}*"))
+
+office_table_display <- function(df, office_group) {
+    df %>%
+        filter(office == office_group) %>%
+        select(row_group, incumbent, display_name, statement) %>%
+        gt(groupname_col="row_group", process_md=TRUE) %>%
+        tab_options(
+            column_labels.hidden=TRUE,
+            row_group.background.color = group_color) %>%
+        sub_missing(missing_text="  ") %>%
+        cols_align(columns="display_name", align="right") %>%
+        opt_row_striping(row_striping=FALSE)
+}
+
+office_primary_map <- function(office_group, geom, districts) {
+    (tm_shape(geom %>%
+              right_join((districts %>%
+                          filter(office == office_group)),
+                         by="district")) +
+     tm_fill(col="primary_type",
+             palette=c("Democratic"="#3E74C6",
+                       "Republican"="#FF4949",
+                       "Both"="purple",
+                       "None"=NA)) +
+     tm_borders(lwd=1, col="black") +
+     tm_basemap("OpenStreetMap"))
+}
+
 ```
 
-### State Representative
+## State Representative
 
 ```{r}
 #| column: page
 
-sr_primary_districts <- districts %>%
-    filter(office == "State Representative")
-
-sr_geom <- read_sf("https://bwbensonjr.github.io/mapoli/gis/geojson/house2021.geojson") %>%
-    right_join(sr_primary_districts, by="district")
-
-(tm_shape(sr_geom) +
- tm_fill(col="primary_type",
-         palette=c("Democratic"="#3E74C6",
-                   "Republican"="#FF4949",
-                   "Both"="purple",
-                   "Neither"=NA)) +
- tm_borders(lwd=1, col="black") +
- tm_basemap("OpenStreetMap"))
+office_primary_map(
+    "State Representative",
+    read_sf("https://bwbensonjr.github.io/mapoli/gis/geojson/house2021.geojson"),
+    districts
+)
 ```
 
 <br/>
 
-There are surprising number incumbent primary challenges for sitting State
-Representatives&mdash;fifteen in all.
+There are a fifteen races where a sitting incumbent State
+Representative is being challenged by someone from their own party and
+eleven races where the current State Representative is not running and
+their is at least one party primary.
+
+### Incumbent Primaries
+
+There are thirteen Democratic incumbent challenges and two Republican
+incumbent challenges&mdash;fifteen in all.
 
 ```{r}
-office_table_display(primary_view, "State Representative")
+office_table_display(
+    (primary_view %>% filter(incumbent_primary)),
+    "State Representative"
+)
 ```
 
-### State Senate
+### Open Seat Primaries
+
+```{r}
+office_table_display(
+    (primary_view %>% filter(is_open)),
+    "State Representative"
+)
+```
+
+## State Senate
+
+```{r}
+#| column: page
+
+office_primary_map(
+    "State Senate",
+    read_sf("https://bwbensonjr.github.io/mapoli/gis/geojson/senate2021.geojson"),
+    districts
+)
+```
+
+<br/>
 
 Incumbent State Senators Mark Montigny (D-New Bedford), Adam Gomez
 (D-Springfield), and Nick Collins (D-Boston) all face primary
@@ -222,12 +259,37 @@ challengers. State Representative Bill Driscoll (D-Milton) is running
 for the Norfolk, Plymouth and Bristol seat held by retiring Senator
 Walter Timilty (D-Milton).
 
+### Incumbent Primaries
+
 ```{r}
-office_table_display(primary_view, "State Senate")
+office_table_display(
+    (primary_view %>% filter(incumbent_primary)),
+    "State Senate"
+)
+```
+
+### Open Seat Primaries
+
+```{r}
+office_table_display(
+    (primary_view %>% filter(is_open)),
+    "State Senate"
+)
 ```
 
 ### Governor's Council
 
+```{r}
+#| column: page
+
+office_primary_map(
+    "Governor's Council",
+    read_sf("https://bwbensonjr.github.io/mapoli/gis/geojson/govcouncil2021.geojson"),
+    districts
+)
+```
+
+<br/>
 There are two incumbent primary challenges and an open seat for the
 Governor's Council. Mara Dolan stands a very good chance of unseating
 Devaney who has held the seat for 25 years.
@@ -237,9 +299,14 @@ office_table_display(primary_view, "Governor's Council")
 ```
 
 ### U.S. Congress
-
-None of Stephen Lynch's GOP challengers seem to be taking this race
-seriously. Only Govatsos has raised any money&mdash;less than $5,000.
+ 
+Unlike the State Representative, State Senate, and Governor's Council
+races, the primary race for the Eighth Congressional seat represented
+by Stephen Lynch is not an incumbent challenge or for an open seat,
+but rather to determine the Republican to face Lynch in the general
+election. None of the GOP challengers seem to be taking
+this race seriously and only Govatsos has raised any money&mdash;less
+than $5,000.
 
 ```{r}
 office_table_display(primary_view, "Representative in Congress")
@@ -247,10 +314,11 @@ office_table_display(primary_view, "Representative in Congress")
 
 ## U.S. Senate
 
-Three Republicans have qualified to be on the ballot September 3rd and
-will face off in a primary. Deaton has raised close to a half a
-million dollars, but has less-than-stellar chance against Elizabeth
-Warren if he makes it to the general.
+There are also three Republicans vying for the GOP nomination to face
+Senator Elizabeth Warren in the November 5 general election. John
+Deaton (R-Swansea) has raised close to a half a million dollars, but
+has less-than-stellar chance against Elizabeth Warren if he is the
+Republican who makes it to the general.
 
 ```{r}
 office_table_display(primary_view, "Senator in Congress")
