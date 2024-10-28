@@ -3,7 +3,7 @@ title: Refinishing our early 1900s upright piano
 author: "Brent Benson"
 date: "2024-10-28"
 categories: ["maker", "woodworking"]
-image: 01_refinished_piano_keys.jpeg
+image: piano-refinishing.jpeg
 filters:
    - lightbox
 lightbox: auto
