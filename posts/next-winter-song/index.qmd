@@ -15,10 +15,9 @@ lightbox: auto
 I've written quite a few songs and pieces of music in my 5+ decades on
 this planet. But I have many, many more small fragments, pieces of
 manuscript, voice memos, and song ideas that remain in a nascent,
-partially-formed state. Based on my readings of other songwriters and
-composers on their creative process, this is a standard state of
-affairs.  While I occasionally sort through the backlog of material
-and continue working on ideas, the odds are against most of them ever
+partially-formed state. This seems to be a common state of
+affairs. While I occasionally sort through the backlog of material and
+continue working on ideas, the odds are against most of them ever
 being completed.
 
 I learned from Sarah Lewis's great book [The Rise: Creativity, the
@@ -26,13 +25,15 @@ Gift of Failure, and the Search for
 Mastery](https://www.simonandschuster.com/books/The-Rise/Sarah-Lewis/9781451629248)
 that painter Paul Cézanne considered something like 90% of his
 paintings to be unfinished and only gave the endorsement of his
-signature to the remaining 10%. Lewis provides both heartbreaking and
+signature to a small set. Lewis provides both heartbreaking and
 uplifting examples of the interplay between the more private creative
 impulse and the difficult importance of sharing a work with others.
 
-I'm a sucker for self-referential art and creations that deal with the
-creative process. I have a particular love of songs about songs and
-song writing. One of my favorites is Ron Sexsmith's [*This
+This struggle to shephard an artistic idea into the larger world can
+end up being the subject of the art itself.  I happen to be a sucker
+for self-referential art and creations that deal with the creative
+process. I have a particular love of songs about songs and song
+writing. One of my favorites is Ron Sexsmith's [*This
 Song*](https://www.youtube.com/watch?v=mZccEcewZeU) which speaks from
 the point of view of the songwriter:
 
@@ -97,12 +98,11 @@ program with the placeholder title of *Song Four*.
 
 I was a bit embarassed by the simplicity and old-fashioned show tune
 style of the song. Thankfully I played it for my musician son who
-happened to be visiting within a week of writing it down.  They
-pointed out some of the interesting harmonic elements and tensions
-between the melody and chords, reassuring me that there was something
-interesting in the song. I really appreciate their encouragement on
-any of my endeavors and in this case there is no doubt it prolonged
-the life of *this* song.
+happened to be visiting. They pointed out some of the interesting
+harmonic elements and tensions between the melody and chords,
+reassuring me that there was something interesting in the song. I
+really appreciate their encouragement on any of my endeavors and in
+this case there is no doubt it prolonged the life of *this* song.
 
 I've fooled around with several ways of arranging the song, including
 a not-yet-fully-baked string trio arrangement. I will probably set the
@@ -121,8 +121,7 @@ self-referential. While there is always some level of cleverness
 involved with producing art about art I am trying to not let that get
 in the way of truth and connection. More to come.
 
-Here is a solo piano version of the tune to give you the flavor of the
-song.
+Here is a simple playing of the song on the piano:
 
 {{< video https://youtu.be/1OmSXNHteOo >}}
 
