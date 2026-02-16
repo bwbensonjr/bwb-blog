@@ -5,9 +5,7 @@ author: "Brent Benson"
 date: "2025-10-02"
 categories: ["science", "politics"]
 image: jane-goodall-barbara-benson.png
-filters:
-   - lightbox
-lightbox: auto
+lightbox: true
 ---
 
 When I was 10 years old I remember driving with my mother from our old

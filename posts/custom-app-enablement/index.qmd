@@ -1,0 +1,124 @@
+---
+title: "A custom app creation renaissance"
+subtitle: "There is a change in the calculus of what is achievable with a sketch and a 10 minute conversation"
+author: "Brent Benson"
+date: "2026-02-16"
+categories: ["ai", "music", "technology"]
+image: "design-with-result.png"
+---
+
+The advent of AI coding assitants aren't just enabling
+non-programmers, they are enabling experienced programmers to branch
+out into new and unfamiliar territory.
+
+I've written a lot of code in my lifetime, the majority of it in
+application areas like compilers, intepreters, machine learning,
+statistics, learning analytics, and political analysis. I have never
+been particularly comfortable or spent much time writing traditional
+end-user applications with user interfaces.
+
+This is a case study of developing a web-based drum machine
+application in the space of a few hours over a couple of days to solve
+a particular and personal job-to-be-done. It is doubtful that I would
+have started this project, and even more doubtful that I would have
+finished it, without an AI coding assistant.
+
+## The problem statement 
+
+I have been studying the drum set and taking drum lessons for a few
+years. I have a variety of tools that let me specify a drum pattern or
+beat and play it back, but none of them did exactly what I wanted. In
+particular, I wanted a full, grid-based view of all of the
+parts/instruments and an easy way to keep track of and share patterns
+with others. I was able to take the following specification and a few
+hours of refinement into a working application hosted on GitHub pages.
+
+Here is the sketch I drew on a piece of graph paper and shared via a
+photo from my phone:
+
+![My user interface sketch on graph paper](user-interface-sketch.png)
+
+And here is the prompt I gave to Claude Code:
+
+```markdown
+# GridDrum Design 
+
+A grid-based drum machine application with a sample per-line (e.g., kick.wav,
+snare.wave, ...) and an adjustable number of beats in the grid. 
+
+A sketch of the user interface: ![](user-interface-sketch.png)
+
+- The plan is to prototype as a web-based application using the
+  WebAudio API in a way that can eventually be delivered using Tauri
+  or Electron.
+- Basic functions:
+  - Establish number of beats (columns) and number of samples (rows)
+  - Load and audio file sample for each row, set the sample name, and
+    trigger the sample to test.
+  - Click on grid openings to set or unset the playing of the sample.
+  - Play, pause, or reset the loop.
+  - The loop should continue to play until it is paused.
+- There are some samples in the `samples` folder for testing.
+```
+
+This was based on a conversation with an AI model about whether to do
+a native app, a web-based application, or a web app delivered as an
+app through [Electron](https://www.electronjs.org/). It suggested
+prototyping as a simple web application and then delivering with
+[Tauri](https://v2.tauri.app/).
+
+## First version and iteration 
+
+I spent about 10 minutes interacting with Claude Code plan mode. After
+that I asked it to clear the context and execute the plan. It was done
+with the initial coding in breathtakingly small amount of
+time&mdash;it seemed like 30 seconds, but was probably a minute or
+two. I could test it locally serving it up with the Python web server
+`python -m http.server 8000`.
+
+![First screen shot](screen-shot-1.png)
+
+This first version did almost all I wanted and I filed a set of GitHub
+issues to track new features or changes I wanted to make.
+
+- Per-row add/delete buttons
+- Add more samples/normalize samples 
+- Save/load settings/patterns to JSON files 
+- Space bar to start/stop playing 
+- Per-sample volume, mute, solo 
+- Encode settings/pattern in URL to allow bookmarking/sharing 
+- Reset button and meta tags 
+- Fix audio playback bug on iPhone and swing setting
+
+You can see the full evolution on the project's [GitHub Commits
+page](https://github.com/bwbensonjr/grid-drum/commits/main/). I asked
+Claude Code to fix each of the issues in turn and I tested locally and
+then in GitHub Pages.
+
+Interestingly, while I was working through my issues list someone
+asked to have the [per-sample volume, mute, solo
+issue](https://github.com/bwbensonjr/grid-drum/issues/2) assigned to
+them so they could help! I didn't take them up on it because I was
+about to make the change.
+
+## Learnings 
+
+The current version does just about all of the things that drove me to
+create the application, although I have some additional cleanup to
+do. In particular, the per-beat highlighting seems to fall behind at
+times.
+
+My key learning is that I can take on the development of custom
+applications that I want or need despite my limitations in particular
+types of application development. Another bespoke application I have
+created is my [Note Links
+app](https://bwbensonjr.github.io/note-links/) that makes the links I
+put in my Obsidian daily notes available on the web with tags and
+searchable summaries.
+
+## Links 
+
+- The [`drum-grid` GitHub repository](https://github.com/bwbensonjr/grid-drum).
+- The [DrumGrid application](https://bwbensonjr.github.io/grid-drum).
+
+

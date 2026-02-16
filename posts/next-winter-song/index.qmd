@@ -5,9 +5,7 @@ author: "Brent Benson"
 date: "2024-11-21"
 categories: ["music", "songwriting", "art"]
 image: song-idea.jpeg
-filters:
-   - lightbox
-lightbox: auto
+lightbox: true
 ---
 
 ![My first handwritten version of the song idea with melody and chords in an open music notebook](song-idea.jpeg){group="song-photos"}
