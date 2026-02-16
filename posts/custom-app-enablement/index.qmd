@@ -17,11 +17,13 @@ statistics, learning analytics, and political analysis. I have never
 been particularly comfortable or spent much time writing traditional
 end-user applications with user interfaces.
 
-This is a case study of developing a web-based drum machine
-application in the space of a few hours over a couple of days to solve
-a particular and personal job-to-be-done. It is doubtful that I would
-have started this project, and even more doubtful that I would have
-finished it, without an AI coding assistant.
+This is a case study of developing [a web-based drum machine
+application](https://bwbensonjr.github.io/grid-drum) in the space of a
+few hours over a couple of days to solve a particular and personal
+job-to-be-done. It is doubtful that I would have started [this
+project](https://github.com/bwbensonjr/grid-drum), and even more
+doubtful that I would have finished it, without an AI coding
+assistant.
 
 ## The problem statement 
 
