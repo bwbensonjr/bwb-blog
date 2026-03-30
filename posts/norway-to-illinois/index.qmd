@@ -1,6 +1,6 @@
 ---
 title: "From Norway to Illinois"
-subtitle: "My great-grandmother Anna Benson's journey from Scandanavia to the American Midwest"
+subtitle: "My great-grandmother Anna Benson's journey from Scandanavia to Chicago, Illinois"
 author: "Brent Benson"
 date: "2026-03-29"
 categories: ["family", "ancestry"]
@@ -8,14 +8,23 @@ image: 01-olsen-family-portrait.png
 lightbox: true
 ---
 
-![Olsen family portrait, late 1800s](01-olsen-family-portrait.png)
+![Olsen family portrait, late 1800s](01-olsen-family-portrait.png){group="photos"}
+
+I have been looking at ancestry and geneological records to better
+understand when and why my ancestors came to America. This is the
+emigration story of my great-grandmother Anna Benson from Norway to
+America in late 1800s.
 
 My father's father's mother Anna Benson, née Anna Kristina
 Bernstdatter, was born on February 7, 1875 in Eidsvold, Norway. She
-was one of nine children of Bernt Olsen and Berte Kristine Olsdatter,
-all of whom were born in Norway, and later emigrated to America.
+was the sixth of nine children of Bernt Olsen and Berte Kristine
+Olsdatter, all of whom were born in Norway, and later emigrated to
+America.
 
-![Anna Olsen's birth record, *Norway, Church Records, 1812-1938*](02-anna-birth-record.png)
+Here is her birth record from archived church records.
+
+![Anna Olsen's birth record, *Norway, Church Records,
+1812-1938*](02-anna-birth-record.png){group="photos"}
 
 The translation of the highlighted section is:
 
@@ -23,7 +32,13 @@ The translation of the highlighted section is:
 - **Date of Baptism:** 25th of March, 1875 
 - **Child's full Name:** Anna Kristine
 - **Whether legitimate or illegitimate birth:** Legitimate 
-- **Parent's full Names, civil occuption and place of residence:** Day laborer Bernt Olsen and Berte Kristine Olsdatter, residing at Berger Eie (an owner/tenant farm property at Berger).
+- **Parent's full Names, civil occuption and place of residence:** Day
+  laborer Bernt Olsen and Berte Kristine Olsdatter, residing at Berger
+  Eie (an owner/tenant farm property at Berger).
+
+There are similar records for all eight of Anna's siblings. We can
+learn more about their early lives in Norway from her older brother
+Christ's writings.
 
 ## Lumber harvesting and sawing on the Burger Bruk estate
 
@@ -71,9 +86,12 @@ to America that provides important details.
 > shoemaker at our house for two weeks at times making a pair of shoes
 > for each one of us, which had to last us for a whole year.
 
-![A map of southern Norway. The square marks the Burger estate the
-southern end of Hurdalssjøen (Hurdal Lake). The star marks Oslo, then
-known as Kristiana](03-kristiana-norway-map.jpg)
+There was enough information in the biographical sketch to indentify
+the exact location of the estate and sawmill in Eidsvold.
+
+![The location of the Berger estate and sawmill at the southern tip of
+Hurdal Lake (square) 28 miles northeast of Oslo, then know as
+Kristiana (star).](03-kristiana-norway-map.jpg){group="photos"}
 
 The Bergen Bruk estate was at the southern end of Hurdal Lake,
 northwest of present-day Oslo. It was home to a sawmill and glassworks
@@ -81,6 +99,18 @@ where the family worked, lived, and went to school.
 
 ![Sitemap of the Bergen Bruk Sawmill and Glassworks, home, workplace,
 and school for Anna Benson's
-family](04-eidsvoll-bergen-bruk-sitemap.png)
+family](04-eidsvoll-bergen-bruk-sitemap.png){group="photos"}
 
-![](05-eidsvoll-bergen-bruk-sawmill.jpg)
+The Olsen/Olsdatter family worked to fell trees in the forest and then
+saw the trees into boards in the sawmill.
+
+![The Bergen Bruck Sawmill at the southern end of Hurdal
+Lake](05-eidsvoll-bergen-bruk-sawmill.jpg){group="photos"}
+
+The resulting boards were transported to the rail station in Dal by
+horse-drawn rail cars.
+
+![Horse-drawn rail cars carrying lumber from the Bergen sawmill to the
+Dal rail station](06-eidsvoll-berger-bruk-dal-horse-rail.jpg){group="photos"}
+
+
