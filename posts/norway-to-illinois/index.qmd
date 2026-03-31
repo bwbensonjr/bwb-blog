@@ -1,6 +1,6 @@
 ---
 title: "From Norway to Illinois"
-subtitle: "My great-grandmother Anna Benson's journey from Scandanavia to Chicago, Illinois"
+subtitle: "Anna Benson's journey from Scandanavia to Chicago, Illinois"
 author: "Brent Benson"
 date: "2026-03-29"
 categories: ["family", "ancestry"]
