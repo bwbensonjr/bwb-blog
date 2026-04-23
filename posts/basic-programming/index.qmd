@@ -1,0 +1,9 @@
+---
+title: BASIC Impact
+subtitle: 
+author: "Brent Benson"
+date: "2026-04-23"
+categories: ["technology", "programming languages"]
+image: TRS-80-Color-Computer.JPG
+lightbox: auto
+---
