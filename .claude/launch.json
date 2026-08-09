@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "blog-preview",
+      "runtimeExecutable": "quarto",
+      "runtimeArgs": ["preview", "--port", "4200", "--no-browser"],
+      "port": 4200
+    }
+  ]
+}

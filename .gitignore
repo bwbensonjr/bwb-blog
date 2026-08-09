@@ -173,3 +173,10 @@ cython_debug/
 .Rproj.user
 
 **/*.quarto_ipynb
+
+# US 20 map data. The published files (posts/us-route-20/us20*.geojson) are
+# tracked; these are the intermediates the scripts regenerate: the Overpass
+# download, the TIGER shapefile cache, and the merged TIGER cross-check.
+posts/us-route-20/_gis/us20_raw.json
+posts/us-route-20/_gis/us20_tiger.json
+posts/us-route-20/_gis/tiger/
