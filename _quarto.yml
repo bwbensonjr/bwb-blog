@@ -1,6 +1,14 @@
 project:
   type: website
   output-dir: docs
+  # CLAUDE.md is guidance for Claude Code, not a page, and Quarto would
+  # otherwise publish it as docs/CLAUDE.html. The includes have to be listed
+  # explicitly: a render list containing only an exclusion resolves to zero
+  # input files rather than "everything except this".
+  render:
+    - "**/*.qmd"
+    - "**/*.md"
+    - "!CLAUDE.md"
 
 website:
   title: "Brent Benson"
