@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -37,14 +40,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1b5cbb678aba238cc9ecc8dbef59e0a8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cbed20f07cd0a3452a6886fe8d146970.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -94,12 +98,6 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VGEHLT4S8G"></script>
 
@@ -112,7 +110,7 @@ gtag('config', 'G-VGEHLT4S8G', { 'anonymize_ip': true});
 </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -149,24 +147,21 @@ window.Quarto = {
 <meta property="og:image:width" content="1078">
 <meta name="twitter:title" content="Posts – Brent Benson">
 <meta name="twitter:image" content="https://brentwbenson.org/posts/norway-to-illinois/01-olsen-family-portrait.png">
-<meta name="twitter:image-height" content="992">
-<meta name="twitter:image-width" content="1078">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Brent Benson</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -194,6 +189,7 @@ window.Quarto = {
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -203,9 +199,9 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="YWk=">ai <span class="quarto-category-count">(3)</span></div><div class="category" data-category="YW5jZXN0cnk=">ancestry <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YXJ0">art <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ym9va3M=">books <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWNvbm9taWNz">economics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWxlY3Rpb25z">elections <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZmFtaWx5">family <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWFrZXI=">maker <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWFwb2xp">mapoli <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bXVzaWM=">music <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cG9saXRpY3M=">politics <span class="quarto-category-count">(3)</span></div><div class="category" data-category="c2NpZW5jZQ==">science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c29uZ3dyaXRpbmc=">songwriting <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dGVjaG5vbG9neQ==">technology <span class="quarto-category-count">(3)</span></div><div class="category" data-category="d29vZHdvcmtpbmc=">woodworking <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="YWk=">ai <span class="quarto-category-count">(3)</span></div><div class="category" data-category="YW5jZXN0cnk=">ancestry <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YXJ0">art <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ym9va3M=">books <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWNvbm9taWNz">economics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWxlY3Rpb25z">elections <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZmFtaWx5">family <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWFrZXI=">maker <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bWFwb2xp">mapoli <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bXVzaWM=">music <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cG9saXRpY3M=">politics <span class="quarto-category-count">(3)</span></div><div class="category" data-category="c2NpZW5jZQ==">science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c29uZ3dyaXRpbmc=">songwriting <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dGVjaG5vbG9neQ==">technology <span class="quarto-category-count">(3)</span></div><div class="category" data-category="d29vZHdvcmtpbmc=">woodworking <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -232,18 +228,52 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ZmFtaWx5JTJDYW5jZXN0cnk=" data-listing-date-sort="1775361600000" data-listing-file-modified-sort="1776965302384" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2349">
-<div class="thumbnail"><a href="./posts/norway-to-illinois/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="0" data-categories="bWFrZXIlMkN3b29kd29ya2luZw==" data-listing-date-sort="1794373200000" data-listing-file-modified-sort="1794436915895" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1102">
+<div class="thumbnail"><a href="./posts/wall-project/index.html" class="no-external-icon">
+
+<p class="card-img-top"><img loading='lazy' src="posts/wall-project/finished-wall.jpeg" alt="The finished project"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/wall-project/index.html" class="no-external-icon">Project report: building a custom door and wall for our bedroom</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('bWFrZXI='); return false;">maker</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('d29vZHdvcmtpbmc='); return false;">woodworking</div>
+
+</div>
+<div class="listing-description">
+<a href="./posts/wall-project/index.html" class="no-external-icon">
+When we bought our house in Watertown, Massachusetts at the end of 2023, it was just about perfect, at least from our point of view. The house was built in the 1920s and had…
+</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/wall-project/index.html" class="no-external-icon">
+<div class="listing-date">
+Nov 11, 2026
+</div>
+<div class="listing-author">
+Brent Benson
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="ZmFtaWx5JTJDYW5jZXN0cnk=" data-listing-date-sort="1775361600000" data-listing-file-modified-sort="1777044157151" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2349">
+<div class="thumbnail"><a href="./posts/norway-to-illinois/index.html" class="no-external-icon">
 
 <img loading="lazy" src="./posts/norway-to-illinois/01-olsen-family-portrait.png" class="thumbnail-image">
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/norway-to-illinois/index.html" class="no-external">From Norway to Illinois</a>
+<a href="./posts/norway-to-illinois/index.html" class="no-external-icon">From Norway to Illinois</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./posts/norway-to-illinois/index.html" class="no-external">Anna Benson’s journey from Eidsvold, Norway to Chicago, Illinois</a>
+<a href="./posts/norway-to-illinois/index.html" class="no-external-icon">Anna Benson’s journey from Eidsvold, Norway to Chicago, Illinois</a>
 </div>
 <div class="listing-categories">
 
@@ -252,12 +282,14 @@ window.Quarto = {
 <div class="listing-category" onclick="window.quartoListingCategory('YW5jZXN0cnk='); return false;">ancestry</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/norway-to-illinois/index.html" class="no-external">
+<div class="listing-description">
+<a href="./posts/norway-to-illinois/index.html" class="no-external-icon">
 <em>I have been looking at geneological records and family photographs and documents to better understand when and why my ancestors came to America. This is the immigration…</em>
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="./posts/norway-to-illinois/index.html" class="no-external">
+<a href="./posts/norway-to-illinois/index.html" class="no-external-icon">
 <div class="listing-date">
 Apr 5, 2026
 </div>
@@ -267,18 +299,18 @@ Brent Benson
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="ZWNvbm9taWNzJTJDdGVjaG5vbG9neSUyQ2Fp" data-listing-date-sort="1772859600000" data-listing-file-modified-sort="1776966895314" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="400">
-<div class="thumbnail"><a href="./posts/ai-book-risks/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="2" data-categories="ZWNvbm9taWNzJTJDdGVjaG5vbG9neSUyQ2Fp" data-listing-date-sort="1772859600000" data-listing-file-modified-sort="1777044156984" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="400">
+<div class="thumbnail"><a href="./posts/ai-book-risks/index.html" class="no-external-icon">
 
 <img loading="lazy" src="./posts/ai-book-risks/wall-street-1929.jpg" class="thumbnail-image">
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/ai-book-risks/index.html" class="no-external">Identifying economic risks in the AI boom</a>
+<a href="./posts/ai-book-risks/index.html" class="no-external-icon">Identifying economic risks in the AI boom</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./posts/ai-book-risks/index.html" class="no-external">Weisberg compares 1929 (Sorkin, Galbraith), 2008, and today</a>
+<a href="./posts/ai-book-risks/index.html" class="no-external-icon">Weisberg compares 1929 (Sorkin, Galbraith), 2008, and today</a>
 </div>
 <div class="listing-categories">
 
@@ -289,12 +321,14 @@ Brent Benson
 <div class="listing-category" onclick="window.quartoListingCategory('YWk='); return false;">ai</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/ai-book-risks/index.html" class="no-external">
+<div class="listing-description">
+<a href="./posts/ai-book-risks/index.html" class="no-external-icon">
 While we don’t necessarily expect economic history to repeat itself, it can help to look for some possible rhymes.
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="./posts/ai-book-risks/index.html" class="no-external">
+<a href="./posts/ai-book-risks/index.html" class="no-external-icon">
 <div class="listing-date">
 Mar 7, 2026
 </div>
@@ -304,18 +338,18 @@ Brent Benson
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="YWklMkNtdXNpYyUyQ3RlY2hub2xvZ3k=" data-listing-date-sort="1771218000000" data-listing-file-modified-sort="1776965302157" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="701">
-<div class="thumbnail"><a href="./posts/custom-app-enablement/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="3" data-categories="YWklMkNtdXNpYyUyQ3RlY2hub2xvZ3k=" data-listing-date-sort="1771218000000" data-listing-file-modified-sort="1771258944738" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="701">
+<div class="thumbnail"><a href="./posts/custom-app-enablement/index.html" class="no-external-icon">
 
 <img loading="lazy" src="./posts/custom-app-enablement/design-with-result.png" class="thumbnail-image">
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/custom-app-enablement/index.html" class="no-external">A custom app creation renaissance</a>
+<a href="./posts/custom-app-enablement/index.html" class="no-external-icon">A custom app creation renaissance</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./posts/custom-app-enablement/index.html" class="no-external">There is a change in the calculus of what is achievable with a sketch and a 10 minute conversation</a>
+<a href="./posts/custom-app-enablement/index.html" class="no-external-icon">There is a change in the calculus of what is achievable with a sketch and a 10 minute conversation</a>
 </div>
 <div class="listing-categories">
 
@@ -326,12 +360,14 @@ Brent Benson
 <div class="listing-category" onclick="window.quartoListingCategory('dGVjaG5vbG9neQ=='); return false;">technology</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/custom-app-enablement/index.html" class="no-external">
+<div class="listing-description">
+<a href="./posts/custom-app-enablement/index.html" class="no-external-icon">
 The advent of AI coding assitants isn’t just enabling non-programmers, it is enabling experienced programmers to branch out into new and unfamiliar territory.
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="./posts/custom-app-enablement/index.html" class="no-external">
+<a href="./posts/custom-app-enablement/index.html" class="no-external-icon">
 <div class="listing-date">
 Feb 16, 2026
 </div>
@@ -341,18 +377,18 @@ Brent Benson
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="c2NpZW5jZSUyQ3BvbGl0aWNz" data-listing-date-sort="1759377600000" data-listing-file-modified-sort="1776965302517" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="413">
-<div class="thumbnail"><a href="./posts/single-voice/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="4" data-categories="c2NpZW5jZSUyQ3BvbGl0aWNz" data-listing-date-sort="1759377600000" data-listing-file-modified-sort="1771256073605" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="413">
+<div class="thumbnail"><a href="./posts/single-voice/index.html" class="no-external-icon">
 
 <img loading="lazy" src="./posts/single-voice/jane-goodall-barbara-benson.png" class="thumbnail-image">
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/single-voice/index.html" class="no-external">The power of a single voice</a>
+<a href="./posts/single-voice/index.html" class="no-external-icon">The power of a single voice</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./posts/single-voice/index.html" class="no-external">Jane Goodall’s environmental advocacy changed the world and inspired thousands of women scientists like my mother</a>
+<a href="./posts/single-voice/index.html" class="no-external-icon">Jane Goodall’s environmental advocacy changed the world and inspired thousands of women scientists like my mother</a>
 </div>
 <div class="listing-categories">
 
@@ -361,12 +397,14 @@ Brent Benson
 <div class="listing-category" onclick="window.quartoListingCategory('cG9saXRpY3M='); return false;">politics</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/single-voice/index.html" class="no-external">
+<div class="listing-description">
+<a href="./posts/single-voice/index.html" class="no-external-icon">
 When I was 10 years old I remember driving with my mother from our old brick farm house just outside of Coopersburg, Pennsylvania over South Mountain to the biology…
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="./posts/single-voice/index.html" class="no-external">
+<a href="./posts/single-voice/index.html" class="no-external-icon">
 <div class="listing-date">
 Oct 2, 2025
 </div>
@@ -376,18 +414,18 @@ Brent Benson
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="bXVzaWMlMkNzb25nd3JpdGluZyUyQ2FydA==" data-listing-date-sort="1732165200000" data-listing-file-modified-sort="1776965302178" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="931">
-<div class="thumbnail"><a href="./posts/next-winter-song/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="5" data-categories="bXVzaWMlMkNzb25nd3JpdGluZyUyQ2FydA==" data-listing-date-sort="1732165200000" data-listing-file-modified-sort="1771256045957" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="931">
+<div class="thumbnail"><a href="./posts/next-winter-song/index.html" class="no-external-icon">
 
 <img loading="lazy" src="./posts/next-winter-song/song-idea.jpeg" class="thumbnail-image">
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/next-winter-song/index.html" class="no-external">How can this song survive?</a>
+<a href="./posts/next-winter-song/index.html" class="no-external-icon">How can this song survive?</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./posts/next-winter-song/index.html" class="no-external">Why many creative ideas die on the vine and how a melody became a song</a>
+<a href="./posts/next-winter-song/index.html" class="no-external-icon">Why many creative ideas die on the vine and how a melody became a song</a>
 </div>
 <div class="listing-categories">
 
@@ -398,12 +436,14 @@ Brent Benson
 <div class="listing-category" onclick="window.quartoListingCategory('YXJ0'); return false;">art</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/next-winter-song/index.html" class="no-external">
+<div class="listing-description">
+<a href="./posts/next-winter-song/index.html" class="no-external-icon">
 I’ve written quite a few songs and pieces of music in my 5+ decades on this planet. But I have many, many more small fragments, pieces of manuscript, voice memos, and song…
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="./posts/next-winter-song/index.html" class="no-external">
+<a href="./posts/next-winter-song/index.html" class="no-external-icon">
 <div class="listing-date">
 Nov 21, 2024
 </div>
@@ -413,19 +453,16 @@ Brent Benson
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="bWFrZXIlMkN3b29kd29ya2luZw==" data-listing-date-sort="1730088000000" data-listing-file-modified-sort="1776965302459" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="529">
-<div class="thumbnail"><a href="./posts/piano-refinishing/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="6" data-categories="bWFrZXIlMkN3b29kd29ya2luZw==" data-listing-date-sort="1730088000000" data-listing-file-modified-sort="1771256062595" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="529">
+<div class="thumbnail"><a href="./posts/piano-refinishing/index.html" class="no-external-icon">
 
 <img loading="lazy" src="./posts/piano-refinishing/piano-refinishing.jpeg" class="thumbnail-image">
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/piano-refinishing/index.html" class="no-external">Refinishing our early 1900s upright piano</a>
+<a href="./posts/piano-refinishing/index.html" class="no-external-icon">Refinishing our early 1900s upright piano</a>
 </h3>
-<div class="listing-subtitle">
-<a href="./posts/piano-refinishing/index.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('bWFrZXI='); return false;">maker</div>
@@ -433,12 +470,14 @@ Brent Benson
 <div class="listing-category" onclick="window.quartoListingCategory('d29vZHdvcmtpbmc='); return false;">woodworking</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/piano-refinishing/index.html" class="no-external">
+<div class="listing-description">
+<a href="./posts/piano-refinishing/index.html" class="no-external-icon">
 In the mid-1990s we were living in Lunenburg, Massachusetts with a growing family. My wife and I both grew up with a piano in the house and we were looking to find an…
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="./posts/piano-refinishing/index.html" class="no-external">
+<a href="./posts/piano-refinishing/index.html" class="no-external-icon">
 <div class="listing-date">
 Oct 28, 2024
 </div>
@@ -448,18 +487,18 @@ Brent Benson
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="ZWxlY3Rpb25zJTJDcG9saXRpY3MlMkNtYXBvbGk=" data-listing-date-sort="1724558400000" data-listing-file-modified-sort="1776965302170" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1955">
-<div class="thumbnail"><a href="./posts/mapoli-primaries-2024/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="7" data-categories="ZWxlY3Rpb25zJTJDcG9saXRpY3MlMkNtYXBvbGk=" data-listing-date-sort="1724558400000" data-listing-file-modified-sort="1738799420375" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1956">
+<div class="thumbnail"><a href="./posts/mapoli-primaries-2024/index.html" class="no-external-icon">
 
 <img loading="lazy" src="./posts/mapoli-primaries-2024/state_rep_primary_map.png" class="thumbnail-image">
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/mapoli-primaries-2024/index.html" class="no-external">Massachusetts 2024 State Primaries</a>
+<a href="./posts/mapoli-primaries-2024/index.html" class="no-external-icon">Massachusetts 2024 State Primaries</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./posts/mapoli-primaries-2024/index.html" class="no-external">Contested primaries for the state legislature, Governor’s Council, Congress, and Senate</a>
+<a href="./posts/mapoli-primaries-2024/index.html" class="no-external-icon">Contested primaries for the state legislature, Governor’s Council, Congress, and Senate</a>
 </div>
 <div class="listing-categories">
 
@@ -470,12 +509,14 @@ Brent Benson
 <div class="listing-category" onclick="window.quartoListingCategory('bWFwb2xp'); return false;">mapoli</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/mapoli-primaries-2024/index.html" class="no-external">
+<div class="listing-description">
+<a href="./posts/mapoli-primaries-2024/index.html" class="no-external-icon">
 This overview covers contested primaries for State Representative, State Senate, Governor’s Council, U.S. Congress, and U.S. Senate on September 3, 2024.
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="./posts/mapoli-primaries-2024/index.html" class="no-external">
+<a href="./posts/mapoli-primaries-2024/index.html" class="no-external-icon">
 <div class="listing-date">
 Aug 25, 2024
 </div>
@@ -485,18 +526,18 @@ Brent Benson
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="ZWxlY3Rpb25zJTJDcG9saXRpY3MlMkNtYXBvbGk=" data-listing-date-sort="1722744000000" data-listing-file-modified-sort="1776965302168" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1689">
-<div class="thumbnail"><a href="./posts/mapoli-candidates-2024/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="8" data-categories="ZWxlY3Rpb25zJTJDcG9saXRpY3MlMkNtYXBvbGk=" data-listing-date-sort="1722744000000" data-listing-file-modified-sort="1738799420373" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1690">
+<div class="thumbnail"><a href="./posts/mapoli-candidates-2024/index.html" class="no-external-icon">
 
 <img loading="lazy" src="./posts/mapoli-candidates-2024/state_senate_inc_primaries.png" class="thumbnail-image">
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/mapoli-candidates-2024/index.html" class="no-external">Massachusetts 2024 Election Overview</a>
+<a href="./posts/mapoli-candidates-2024/index.html" class="no-external-icon">Massachusetts 2024 Election Overview</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./posts/mapoli-candidates-2024/index.html" class="no-external">A detailed overview of primary and general races</a>
+<a href="./posts/mapoli-candidates-2024/index.html" class="no-external-icon">A detailed overview of primary and general races</a>
 </div>
 <div class="listing-categories">
 
@@ -507,12 +548,14 @@ Brent Benson
 <div class="listing-category" onclick="window.quartoListingCategory('bWFwb2xp'); return false;">mapoli</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/mapoli-candidates-2024/index.html" class="no-external">
+<div class="listing-description">
+<a href="./posts/mapoli-candidates-2024/index.html" class="no-external-icon">
 This overview covers U.S. Senate, U.S. Congress, State Senate, State Represenative, and Governor’s Council races. It divides the races into incumbents with contested…
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="./posts/mapoli-candidates-2024/index.html" class="no-external">
+<a href="./posts/mapoli-candidates-2024/index.html" class="no-external-icon">
 <div class="listing-date">
 Aug 4, 2024
 </div>
@@ -522,18 +565,18 @@ Brent Benson
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="dGVjaG5vbG9neSUyQ2FpJTJDYm9va3M=" data-listing-date-sort="1720065600000" data-listing-file-modified-sort="1776965302163" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1806">
-<div class="thumbnail"><a href="./posts/lord-of-the-rings/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="9" data-categories="dGVjaG5vbG9neSUyQ2FpJTJDYm9va3M=" data-listing-date-sort="1720065600000" data-listing-file-modified-sort="1738799420370" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1806">
+<div class="thumbnail"><a href="./posts/lord-of-the-rings/index.html" class="no-external-icon">
 
 <img loading="lazy" src="./posts/lord-of-the-rings/lotr_q_and_a.png" class="thumbnail-image">
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/lord-of-the-rings/index.html" class="no-external">Unlocking Middle Earth</a>
+<a href="./posts/lord-of-the-rings/index.html" class="no-external-icon">Unlocking Middle Earth</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./posts/lord-of-the-rings/index.html" class="no-external">A RAG-based tool for exploring <em>The Lord of the Rings</em></a>
+<a href="./posts/lord-of-the-rings/index.html" class="no-external-icon">A RAG-based tool for exploring <em>The Lord of the Rings</em></a>
 </div>
 <div class="listing-categories">
 
@@ -544,12 +587,14 @@ Brent Benson
 <div class="listing-category" onclick="window.quartoListingCategory('Ym9va3M='); return false;">books</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/lord-of-the-rings/index.html" class="no-external">
+<div class="listing-description">
+<a href="./posts/lord-of-the-rings/index.html" class="no-external-icon">
 New generative AI technologies can be useful for delving into detailed, world-building stories like Tolkien’s <em>The Lord of the Rings</em>.
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="./posts/lord-of-the-rings/index.html" class="no-external">
+<a href="./posts/lord-of-the-rings/index.html" class="no-external-icon">
 <div class="listing-date">
 Jul 4, 2024
 </div>
@@ -640,7 +685,8 @@ Brent Benson
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -649,8 +695,69 @@ Brent Benson
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -664,6 +771,7 @@ Brent Benson
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -826,44 +934,54 @@ Brent Benson
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -961,6 +1079,9 @@ Brent Benson
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 
